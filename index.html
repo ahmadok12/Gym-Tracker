@@ -14,6 +14,7 @@
     .composer{margin:24px 0;padding:17px}.row-title{display:flex;justify-content:space-between;align-items:center}.row-title>div{display:flex;align-items:center;gap:9px}.row-title span{color:var(--red);font:800 12px var(--display)}h2{margin:0;font:900 21px var(--display);text-transform:uppercase}.close{width:34px;height:34px;border:0;border-radius:50%;background:var(--soft);font-size:19px}.muscles{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.muscle{min-height:70px;border:1px solid #3d4248;border-radius:12px;background:#292d31;color:#969ca3;font-size:11px;font-weight:700}.muscle b{width:28px;height:28px;margin:0 auto 5px;display:grid;place-items:center;border-radius:7px;background:#383d42;font-size:9px}.muscle.active{border-color:var(--red);background:#ff2d3b1c;color:white}.muscle.active b{background:var(--red)}label{display:block;margin:16px 0 8px;color:#a7acb2;font-size:10px;font-weight:800;text-transform:uppercase}.chips{display:flex;gap:7px;overflow:auto}.chip{flex:none;padding:9px 12px;border:1px solid #42474d;border-radius:99px;background:transparent;color:#8d939b;font-size:10px}.chip.active{background:white;color:#111}.text-input,.setting-input{width:100%;height:45px;padding:0 12px;border:1px solid #42474d;border-radius:10px;background:#171a1d;color:white}
     .performance{margin-top:20px;padding:12px;border:1px solid #408df840;border-radius:12px;display:flex;justify-content:space-between;align-items:center;background:#408df812}.performance span,.performance strong,.performance small{display:block}.performance span{color:#78a5df;font-size:8px;font-weight:800}.performance strong{margin:4px 0;font:800 16px var(--display)}.performance small{color:#858b94;font-size:9px}.performance small b{color:#62a2ff}.performance button{padding:8px;border:1px solid #40536c;border-radius:8px;background:#263343;color:#9bc4ff;font-size:9px;font-weight:800}.set-head,.set-row{display:grid;grid-template-columns:27px 1.35fr 1fr 20px;gap:7px;align-items:center}.set-head{padding:16px 0 6px;color:#656b72;font-size:8px;font-weight:800}.set-entry{border-top:1px solid #ffffff0e}.set-row{padding:7px 0 4px}.set-no{color:var(--red);font:800 14px var(--display)}.stepper{height:38px;border:1px solid #40454b;border-radius:9px;display:grid;grid-template-columns:28px 1fr 28px;overflow:hidden;background:#171a1d}.stepper button{border:0;background:#292d31}.stepper input,.weight input{min-width:0;width:100%;border:0;background:transparent;color:white;text-align:center;font-weight:700}.weight{height:38px;padding:0 6px;border:1px solid #40454b;border-radius:9px;display:flex;align-items:center;background:#171a1d}.weight span{color:#646b72;font-size:8px}.remove{border:0;background:transparent;color:#71777e;font-size:18px}.guidance{padding:0 27px 7px;display:flex;justify-content:space-between;color:#687078;font-size:8px}.guidance b{color:#5f9ff8}.dashed,.save{width:100%;margin-top:10px;padding:11px;border-radius:10px;font-size:11px;font-weight:800}.dashed{border:1px dashed #474c52;background:transparent;color:#90969d}.save{border:0;background:var(--red)}
     .workouts{display:grid;gap:9px}.workout{padding:14px;display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center}.workout-num{height:48px;display:grid;place-items:center;border-left:3px solid var(--red);background:#292d31;color:#858b92;font:800 15px var(--display)}.workout-main{min-width:0}.workout-main>span{color:var(--red);font-size:8px;font-weight:800}.workout-main h3{margin:4px 0 7px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;text-transform:capitalize}.pills{display:flex;gap:4px;overflow:auto}.pills b{flex:none;padding:4px 6px;border-radius:5px;background:var(--soft);font-size:8px}.workout-meta{text-align:right}.workout-meta strong,.workout-meta span,.workout-meta small{display:block}.workout-meta strong{font:800 18px var(--display)}.workout-meta span,.workout-meta small{color:#697078;font-size:8px}.workout-meta small{margin-top:7px}
+    .swipe-row{position:relative;border-radius:20px;overflow:hidden;background:#15181b;touch-action:pan-y}.swipe-row .workout{position:relative;z-index:2;margin:0;transition:transform .22s ease;will-change:transform}.swipe-row.open .workout{transform:translateX(-142px)}.swipe-actions{position:absolute;z-index:1;inset:0 0 0 auto;width:142px;display:grid;grid-template-columns:1fr 1fr}.swipe-actions button{border:0;color:white;font-size:9px;font-weight:800}.swipe-edit{background:#3979d6}.swipe-delete{background:#d52b37}.workout-inline-actions{margin-top:8px;display:flex;justify-content:flex-end;gap:4px}.workout-inline-actions button{padding:5px 7px;border:1px solid #41474e;border-radius:6px;background:#292d31;color:#aeb4bb;font-size:7px;font-weight:800}.workout-inline-actions .delete-workout{border-color:#ff2d3b55;color:#ff737d}.editing-note{margin:10px 0 0;color:#6da8ff;font-size:9px;font-weight:800}
     .score{margin:24px 0 12px;padding:17px 21px;display:flex;justify-content:space-between;align-items:center}.score span{display:block;color:#777e86;font-size:9px;font-weight:800}.score strong{font:900 42px var(--display)}.ring{width:69px;height:69px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--red) 74%,#34383d 0);position:relative}.ring:before{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--card)}.ring b{z-index:1;font:800 18px var(--display)}.tracker-list{display:grid;gap:9px}.tracker{--accent:var(--red);padding:14px}.tracker.blue{--accent:var(--blue)}.tracker.cyan{--accent:var(--cyan)}.tracker.orange{--accent:var(--orange)}.tracker.purple{--accent:var(--purple)}.tracker.indigo{--accent:#7c83ff}.tracker-main{display:grid;grid-template-columns:41px 1fr auto;gap:10px;align-items:center}.metric-icon{width:41px;height:41px;display:grid;place-items:center;border-radius:10px;background:color-mix(in srgb,var(--accent) 17%,transparent);color:var(--accent);font:800 11px var(--display)}.tracker p{margin:0 0 3px;color:#9399a0;font-size:10px;font-weight:700}.metric-value strong{font:900 27px var(--display)}.metric-value span{margin-left:4px;color:#737a81;font-size:9px}.quick{min-width:58px;height:45px;border:0;border-radius:11px;background:var(--accent);font-weight:800}.progress{height:5px;margin:12px 0 9px;border-radius:99px;background:#34383d;overflow:hidden}.progress i{display:block;height:100%;background:var(--accent)}.tracker-status{display:flex;justify-content:space-between;color:#676e75;font-size:8px}.tracker-actions{margin:10px -4px -4px;padding-top:9px;border-top:1px solid #ffffff0e;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.tracker-actions button{padding:7px 2px;border:0;border-radius:7px;background:#2b2f34;color:#9aa0a6;font-size:8px}
     .report-head{display:flex;justify-content:space-between;align-items:end}.report-head h1{font-size:43px}.report-head select{padding:8px;border:1px solid #42474d;border-radius:8px;background:var(--card);color:#aaa;font-size:10px}.stats{margin:23px 0 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.stat{padding:12px 9px;border-radius:13px;background:var(--card)}.stat span{color:#737a81;font-size:8px;font-weight:800}.stat strong{display:block;margin:5px 0 3px;font:900 28px var(--display)}.stat small{color:#646b72;font-size:7px}.chart-card{padding:16px}.chart-title{display:flex;justify-content:space-between}.chart-title span{color:#737a81;font-size:8px;font-weight:800}.chart-title strong{display:block;margin-top:4px;font:800 22px var(--display)}.chart-title b{color:var(--green);font-size:9px}.bars{height:150px;margin-top:14px;display:flex;align-items:end;gap:9px;border-bottom:1px solid #3a3e43}.bar{height:100%;flex:1;display:flex;flex-direction:column;justify-content:end;align-items:center;gap:6px}.bar i{width:22px;border-radius:5px 5px 0 0;background:#3b4046}.bar i.peak{background:linear-gradient(#ff4350,#e71f2d)}.bar span{color:#666d75;font-size:8px}.history-list{display:grid;gap:8px}.history-item{padding:10px 11px;border-radius:13px;display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center;background:var(--card)}.date{height:45px;border-radius:9px;display:grid;place-items:center;background:var(--soft)}.date b{font:800 16px var(--display)}.date span{margin-top:-7px;color:var(--red);font-size:8px}.history-item strong,.history-item small{display:block}.history-item strong{font-size:11px}.history-item small{margin-top:4px;color:#737a81;font-size:8px}.vol{text-align:right}.vol b,.vol span{display:block}.vol b{font:800 16px var(--display)}.vol span{color:#687078;font-size:7px}
     .bottom{position:fixed;z-index:30;left:50%;bottom:14px;width:min(calc(100% - 28px),470px);height:67px;padding:6px 12px;border:1px solid #ffffff14;border-radius:99px;display:flex;justify-content:space-around;background:#080a0cf2;backdrop-filter:blur(18px);transform:translateX(-50%)}.nav{width:88px;border:0;border-radius:99px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:transparent;color:#626971}.nav b{font-size:19px;line-height:1}.nav span{font-size:8px;font-weight:700}.nav.active{background:var(--red);color:white}.toast{position:fixed;z-index:70;left:50%;bottom:92px;padding:11px 15px;border-radius:99px;background:white;color:#151719;font-size:11px;font-weight:800;transform:translateX(-50%);box-shadow:0 12px 40px #000}
@@ -70,8 +71,17 @@
   <div id="toast" class="toast hidden">✓ Exercise saved</div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script type="text/plain" id="legacyPrototypeScript">
-    const muscleMap={Chest:["Upper chest","Mid chest","Lower chest"],Back:["Lats","Upper back","Lower back"],Legs:["Quads","Hamstrings","Glutes","Calves"],Shoulders:["Front delts","Side delts","Rear delts"],Arms:["Biceps","Triceps","Forearms"],Core:["Upper abs","Lower abs","Obliques"]};
-    const abbreviations={Chest:"CH",Back:"BK",Legs:"LG",Shoulders:"SH",Arms:"AR",Core:"CR"};
+    const muscleMap={
+      Chest:["Upper chest","Mid chest","Lower chest"],
+      Triceps:["Long head","Lateral head","Medial head"],
+      Biceps:["Long head","Short head","Brachialis"],
+      Back:["Lats","Upper back","Lower back"],
+      Shoulders:["Front delts","Side delts","Rear delts"],
+      Legs:["Quads","Hamstrings","Glutes","Calves"],
+      Abs:["Upper abs","Lower abs","Obliques"],
+      Forearms:["Flexors","Extensors","Grip"]
+    };
+    const abbreviations={Chest:"CH",Triceps:"TR",Biceps:"BI",Back:"BK",Shoulders:"SH",Legs:"LG",Abs:"AB",Forearms:"FR"};
     const previousSets=[{reps:10,weight:22.5},{reps:10,weight:22.5},{reps:8,weight:25}];
     let selectedMuscle="",selectedSub="",sets=[{reps:10,weight:20}],activeTracker=null,modalMode="history",chartPeriod="daily";
     let workouts=[{muscle:"Chest",sub:"Upper chest",exercise:"Incline dumbbell press",sets:[{reps:12,weight:20},{reps:10,weight:22.5},{reps:8,weight:25}],time:"07:42 PM"}];
@@ -106,8 +116,17 @@
     const SUPABASE_URL="https://xdjfbtkimiuobeomzvwg.supabase.co";
     const SUPABASE_PUBLISHABLE_KEY="sb_publishable_mYzK6pdCN8Evs2ZWp1AFfw_XKtl0EPk";
     const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
-    const muscleMap={Chest:["Upper chest","Mid chest","Lower chest"],Back:["Lats","Upper back","Lower back"],Legs:["Quads","Hamstrings","Glutes","Calves"],Shoulders:["Front delts","Side delts","Rear delts"],Arms:["Biceps","Triceps","Forearms"],Core:["Upper abs","Lower abs","Obliques"]};
-    const abbreviations={Chest:"CH",Back:"BK",Legs:"LG",Shoulders:"SH",Arms:"AR",Core:"CR"};
+    const muscleMap={
+      Chest:["Upper chest","Mid chest","Lower chest"],
+      Triceps:["Long head","Lateral head","Medial head"],
+      Biceps:["Long head","Short head","Brachialis"],
+      Back:["Lats","Upper back","Lower back"],
+      Shoulders:["Front delts","Side delts","Rear delts"],
+      Legs:["Quads","Hamstrings","Glutes","Calves"],
+      Abs:["Upper abs","Lower abs","Obliques"],
+      Forearms:["Flexors","Extensors","Grip"]
+    };
+    const abbreviations={Chest:"CH",Triceps:"TR",Biceps:"BI",Back:"BK",Shoulders:"SH",Legs:"LG",Abs:"AB",Forearms:"FR"};
     const trackerDefaults=[
       {key:"calories",icon:"FL",label:"Calories",target:2400,unit:"kcal",step:50,color:"red"},
       {key:"protein",icon:"PR",label:"Protein",target:160,unit:"g",step:5,color:"blue"},
@@ -117,7 +136,7 @@
       {key:"sleep",icon:"SL",label:"Sleep duration",target:8,unit:"hours",step:.5,color:"indigo"}
     ];
     let currentUser=null,loadedUserId=null,authMode="signin";
-    let selectedMuscle="",selectedSub="",sets=[{reps:10,weight:20}],previousSets=[];
+    let selectedMuscle="",selectedSub="",sets=[{reps:10,weight:20}],previousSets=[],editingWorkoutId=null;
     let activeTracker=null,modalMode="history",chartPeriod="daily";
     let workouts=[];
     let trackers=freshTrackers();
@@ -173,8 +192,9 @@
       document.querySelectorAll("[data-weight]").forEach(input=>input.onchange=()=>sets[input.dataset.weight].weight=Math.max(0,+input.value||0));
     }
     function resetComposer(){
-      selectedMuscle=selectedSub="";previousSets=[];sets=[{reps:10,weight:20}];
+      selectedMuscle=selectedSub="";previousSets=[];sets=[{reps:10,weight:20}];editingWorkoutId=null;
       document.getElementById("exerciseName").value="";
+      document.getElementById("saveWorkout").textContent="✓ Save exercise";
       document.getElementById("composer").classList.add("hidden");
       document.getElementById("openComposer").classList.remove("hidden");
       document.getElementById("targetBlock").classList.add("hidden");
@@ -190,8 +210,47 @@
     function renderWorkouts(){
       const todaysWorkouts=workouts.filter(workout=>isSameLocalDay(workout.performedAt));
       document.getElementById("exerciseCount").textContent=todaysWorkouts.length+" "+(todaysWorkouts.length===1?"EXERCISE":"EXERCISES");
-      document.getElementById("workoutList").innerHTML=todaysWorkouts.length?todaysWorkouts.map((workout,index)=>'<article class="workout surface"><div class="workout-num">'+String(index+1).padStart(2,"0")+'</div><div class="workout-main"><span>'+esc(workout.muscle)+" · "+esc(workout.sub)+'</span><h3>'+esc(workout.exercise)+'</h3><div class="pills">'+workout.sets.map(set=>"<b>"+set.reps+"×"+fmt(set.weight)+"kg</b>").join("")+'</div></div><div class="workout-meta"><strong>'+fmt(workoutVolume(workout))+'</strong><span>KG VOL</span><small>'+workout.time+"</small></div></article>").join(""):'<div class="empty-state">No exercises recorded today. Tap Add workout to begin.</div>';
+      document.getElementById("workoutList").innerHTML=todaysWorkouts.length?todaysWorkouts.map((workout,index)=>'<div class="swipe-row" data-swipe-row="'+workout.id+'"><div class="swipe-actions"><button class="swipe-edit" data-edit-workout="'+workout.id+'">✎<br>Edit</button><button class="swipe-delete" data-delete-workout="'+workout.id+'">×<br>Delete</button></div><article class="workout surface"><div class="workout-num">'+String(index+1).padStart(2,"0")+'</div><div class="workout-main"><span>'+esc(workout.muscle)+" · "+esc(workout.sub)+'</span><h3>'+esc(workout.exercise)+'</h3><div class="pills">'+workout.sets.map(set=>"<b>"+set.reps+"×"+fmt(set.weight)+"kg</b>").join("")+'</div></div><div class="workout-meta"><strong>'+fmt(workoutVolume(workout))+'</strong><span>KG VOL</span><small>'+workout.time+'</small><div class="workout-inline-actions"><button data-edit-workout="'+workout.id+'">Edit</button><button class="delete-workout" data-delete-workout="'+workout.id+'">Delete</button></div></div></article></div>').join(""):'<div class="empty-state">No exercises recorded today. Tap Add workout to begin.</div>';
+      bindWorkoutActions();
       renderReports();
+    }
+    function bindWorkoutActions(){
+      document.querySelectorAll("[data-edit-workout]").forEach(button=>button.onclick=event=>{event.stopPropagation();beginEditWorkout(button.dataset.editWorkout)});
+      document.querySelectorAll("[data-delete-workout]").forEach(button=>button.onclick=event=>{event.stopPropagation();deleteWorkout(button.dataset.deleteWorkout)});
+      document.querySelectorAll("[data-swipe-row]").forEach(row=>{
+        const card=row.querySelector(".workout");let startX=0,startY=0;
+        card.addEventListener("touchstart",event=>{startX=event.changedTouches[0].clientX;startY=event.changedTouches[0].clientY},{passive:true});
+        card.addEventListener("touchend",event=>{
+          const dx=event.changedTouches[0].clientX-startX,dy=event.changedTouches[0].clientY-startY;
+          if(Math.abs(dx)<35||Math.abs(dx)<Math.abs(dy))return;
+          document.querySelectorAll("[data-swipe-row].open").forEach(other=>{if(other!==row)other.classList.remove("open")});
+          row.classList.toggle("open",dx<0);
+        },{passive:true});
+        card.addEventListener("click",event=>{if(row.classList.contains("open")&&!event.target.closest("button"))row.classList.remove("open")});
+      });
+    }
+    function beginEditWorkout(id){
+      const workout=workouts.find(item=>item.id===id);if(!workout)return;
+      editingWorkoutId=id;selectedMuscle=workout.muscle;selectedSub=workout.sub;
+      sets=workout.sets.slice(0,5).map(set=>({reps:set.reps,weight:set.weight}));
+      const earlier=workouts.find(item=>item.id!==id&&item.muscle===selectedMuscle&&item.sub===selectedSub);
+      previousSets=earlier?earlier.sets.map(set=>({reps:set.reps,weight:set.weight})):[];
+      document.getElementById("exerciseName").value=workout.exercise;
+      document.getElementById("openComposer").classList.add("hidden");
+      document.getElementById("composer").classList.remove("hidden");
+      document.getElementById("targetBlock").classList.remove("hidden");
+      document.getElementById("setsBlock").classList.remove("hidden");
+      document.getElementById("saveWorkout").textContent="✓ Update exercise";
+      renderMuscles();renderSubMuscles();renderSets();
+      document.getElementById("composer").scrollIntoView({behavior:"smooth",block:"start"});
+    }
+    async function deleteWorkout(id){
+      const workout=workouts.find(item=>item.id===id);if(!workout)return;
+      if(!confirm('Delete "'+workout.exercise+'"? This cannot be undone.'))return;
+      const result=await db.from("workouts").delete().eq("id",id);
+      if(result.error){alert("Workout could not be deleted: "+result.error.message);return}
+      if(editingWorkoutId===id)resetComposer();
+      await loadUserData();showToast("Workout deleted");
     }
     function renderReports(){
       const totalVolume=workouts.reduce((total,workout)=>total+workoutVolume(workout),0);
@@ -206,21 +265,31 @@
       document.getElementById("reportBars").innerHTML=volumes.map((value,index)=>'<div class="bar"><i class="'+(value===max&&value>0?"peak":"")+'" style="height:'+Math.max(value?8:2,Math.round(value/max*100))+'%"></i><span>'+days[index].toLocaleDateString(undefined,{weekday:"narrow"})+"</span></div>").join("");
       document.getElementById("reportHistory").innerHTML=workouts.length?workouts.slice(0,10).map(workout=>{const date=new Date(workout.performedAt);return '<article class="history-item"><div class="date"><b>'+date.getDate()+'</b><span>'+date.toLocaleDateString(undefined,{month:"short"}).toUpperCase()+'</span></div><div><strong>'+esc(workout.exercise)+'</strong><small>'+esc(workout.muscle)+" · "+esc(workout.sub)+" · "+workout.sets.length+' sets</small></div><div class="vol"><b>'+fmt(workoutVolume(workout))+'</b><span>KG</span></div></article>'}).join(""):'<div class="empty-state">Your saved workouts will appear here.</div>';
     }
-    async function saveWorkoutToSupabase(workout,workoutSets){
-      const result=await db.from("workouts").insert({user_id:currentUser.id,muscle_group:workout.muscle,sub_muscle_group:workout.sub,exercise_name:workout.exercise}).select().single();
-      if(result.error)throw result.error;
-      const rows=workoutSets.map((set,index)=>({workout_id:result.data.id,set_number:index+1,reps:Number(set.reps),weight_kg:Number(set.weight)}));
+    async function saveWorkoutToSupabase(workout,workoutSets,id=null){
+      let workoutId=id;
+      if(id){
+        const updateResult=await db.from("workouts").update({muscle_group:workout.muscle,sub_muscle_group:workout.sub,exercise_name:workout.exercise}).eq("id",id);
+        if(updateResult.error)throw updateResult.error;
+        const deleteSetsResult=await db.from("workout_sets").delete().eq("workout_id",id);
+        if(deleteSetsResult.error)throw deleteSetsResult.error;
+      }else{
+        const result=await db.from("workouts").insert({user_id:currentUser.id,muscle_group:workout.muscle,sub_muscle_group:workout.sub,exercise_name:workout.exercise}).select().single();
+        if(result.error)throw result.error;
+        workoutId=result.data.id;
+      }
+      const rows=workoutSets.map((set,index)=>({workout_id:workoutId,set_number:index+1,reps:Number(set.reps),weight_kg:Number(set.weight)}));
       const setsResult=await db.from("workout_sets").insert(rows);
-      if(setsResult.error){await db.from("workouts").delete().eq("id",result.data.id);throw setsResult.error}
+      if(setsResult.error){if(!id)await db.from("workouts").delete().eq("id",workoutId);throw setsResult.error}
     }
     document.getElementById("saveWorkout").onclick=async()=>{
       if(!selectedMuscle||!selectedSub||!currentUser)return;
       const button=document.getElementById("saveWorkout");
       const exercise=document.getElementById("exerciseName").value.trim()||selectedSub+" exercise";
       button.disabled=true;button.textContent="Saving...";
-      try{await saveWorkoutToSupabase({muscle:selectedMuscle,sub:selectedSub,exercise},sets);await loadUserData();resetComposer();showToast("✓ Exercise saved")}
+      const wasEditing=Boolean(editingWorkoutId);
+      try{await saveWorkoutToSupabase({muscle:selectedMuscle,sub:selectedSub,exercise},sets,editingWorkoutId);await loadUserData();resetComposer();showToast(wasEditing?"✓ Exercise updated":"✓ Exercise saved")}
       catch(error){alert("Workout could not be saved: "+error.message)}
-      finally{button.disabled=false;button.textContent="✓ Save exercise"}
+      finally{button.disabled=false;button.textContent=editingWorkoutId?"✓ Update exercise":"✓ Save exercise"}
     };
 
     function renderScore(){
