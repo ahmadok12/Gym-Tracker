@@ -23,6 +23,7 @@
     .auth-screen{min-height:100svh;padding:24px;display:grid;place-items:center;background:radial-gradient(circle at 50% -5%,#ff2d3b2b,transparent 32%),var(--bg)}.auth-card{width:min(100%,430px);padding:28px 22px;border:1px solid #ffffff14;border-radius:24px;background:#202429;box-shadow:0 24px 80px #0008}.auth-logo{width:52px;height:52px;margin-bottom:24px;border-radius:14px;display:grid;place-items:center;background:var(--red);color:white;font:900 26px var(--display);transform:skew(-7deg)}.auth-kicker{margin:0 0 8px;color:var(--red);font-size:9px;font-weight:800;letter-spacing:.15em}.auth-card h1{margin:0;font:900 35px var(--display);text-transform:uppercase}.auth-description{margin:10px 0 24px;color:#858c93;font-size:11px;line-height:1.6}.auth-input{width:100%;height:50px;padding:0 14px;border:1px solid #42474d;border-radius:11px;background:#171a1d;color:white;font-size:14px}.auth-input:focus{border-color:var(--red);outline:none}.auth-message{min-height:18px;margin:14px 0 4px;color:#ff7a83;font-size:10px;line-height:1.5}.auth-message.success{color:var(--green)}.auth-submit{width:100%;height:50px;margin-top:8px;border:0;border-radius:11px;background:var(--red);color:white;font-weight:800}.auth-submit:disabled{cursor:wait;opacity:.6}.auth-switch{width:100%;margin-top:12px;padding:10px;border:0;background:transparent;color:#a8adb3;font-size:10px}.empty-state{padding:24px 16px;border:1px dashed #3e444b;border-radius:16px;color:#727981;text-align:center;font-size:10px}.loading{opacity:.65;pointer-events:none}
     @media(min-width:760px){.shell{margin-block:24px;min-height:calc(100svh - 48px);border:1px solid #3d4247;border-radius:40px}.top{border-radius:40px 40px 0 0}.bottom{bottom:38px}}@media(max-width:370px){.content{padding-inline:14px}.muscles{grid-template-columns:repeat(2,1fr)}}
     .date-input{width:100%;height:45px;padding:0 12px;border:1px solid #42474d;border-radius:10px;background:#171a1d;color:white;color-scheme:dark}.date-help{display:block;margin-top:6px;color:#6f767e;font-size:8px;line-height:1.4}.history-edit{margin-top:7px;padding:5px 8px;border:1px solid #408df866;border-radius:6px;background:#408df81c;color:#83b5ff;font-size:7px;font-weight:800}
+    .nutrition-grid{display:grid;gap:10px}.nutrition-card{--accent:var(--red);padding:15px}.nutrition-card.blue{--accent:var(--blue)}.nutrition-top{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center}.nutrition-top p{margin:0 0 3px;color:#9399a0;font-size:10px;font-weight:700}.nutrition-top strong{font:900 28px var(--display)}.nutrition-top small{margin-left:4px;color:#737a81;font-size:9px}.nutrition-add{height:42px;padding:0 12px;border:0;border-radius:10px;background:var(--accent);font-size:9px;font-weight:800}.nutrition-records{margin-top:11px;padding-top:9px;border-top:1px solid #ffffff0e;display:grid;gap:6px}.nutrition-record{padding:9px;border-radius:10px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;background:#171a1d}.nutrition-record strong,.nutrition-record small{display:block}.nutrition-record strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px}.nutrition-record small{margin-top:4px;color:#747b82;font-size:7px}.nutrition-record-value{text-align:right}.nutrition-record-value b,.nutrition-record-value time{display:block}.nutrition-record-value b{color:var(--accent);font-size:9px}.nutrition-record-value time{margin-top:3px;color:#697078;font-size:7px}.nutrition-record button{grid-column:1/-1;justify-self:end;padding:5px 8px;border:1px solid #ffffff1c;border-radius:6px;background:#292d31;color:#aeb4bb;font-size:7px}.nutrition-footer{margin-top:8px;display:flex;justify-content:space-between;align-items:center;color:#70777f;font-size:8px}.nutrition-footer button{padding:6px 8px;border:0;border-radius:7px;background:#2b2f34;color:#aab0b6;font-size:8px;font-weight:800}.nutrition-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 9px}.nutrition-form-grid .full{grid-column:1/-1}.meal-textarea{width:100%;min-height:76px;padding:11px 12px;border:1px solid #42474d;border-radius:10px;resize:vertical;background:#171a1d;color:white}.nutrition-notice{margin:10px 0;padding:11px;border:1px solid #ffb34755;border-radius:11px;background:#ffb34710;color:#e8b872;font-size:9px;line-height:1.5}
   </style>
 </head>
 <body>
@@ -59,6 +60,10 @@
       <section id="trackScreen" class="screen hidden">
         <div class="hero"><p class="kicker">DAILY TRACKERS</p><h1>Small inputs.<br><span class="outline">Big momentum.</span></h1><p class="subcopy">Keep today moving in the right direction.</p></div>
         <div class="score surface"><div><span>DAILY SCORE</span><strong id="dailyScore">0</strong><small>/100</small></div><div id="scoreRing" class="ring"><b id="scorePercent">0%</b></div></div>
+        <div class="section-label"><span>MEAL NUTRITION</span><b>CALORIES + PROTEIN</b></div>
+        <div id="nutritionSetupNotice" class="nutrition-notice hidden">Meal logging needs the included Supabase nutrition migration before records can be saved.</div>
+        <div id="nutritionCards" class="nutrition-grid"></div>
+        <div class="section-label"><span>DAILY METRICS</span><b>QUICK TRACK</b></div>
         <div id="trackerList" class="tracker-list"></div>
       </section>
       <section id="reportsScreen" class="screen hidden">
@@ -146,8 +151,8 @@
     ];
     let currentUser=null,loadedUserId=null,authMode="signin";
     let selectedMuscle="",selectedSub="",sets=[{reps:10,weight:20}],previousSets=[],editingWorkoutId=null;
-    let activeTracker=null,modalMode="history",chartPeriod="daily";
-    let workouts=[];
+    let activeTracker=null,modalMode="history",chartPeriod="daily",editingNutritionId=null;
+    let workouts=[],nutritionEntries=[],nutritionReady=true;
     let trackers=freshTrackers();
 
     const esc=value=>String(value??"").replace(/[&<>"]/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[char]));
@@ -344,8 +349,24 @@
       document.getElementById("scorePercent").textContent=score+"%";
       document.getElementById("scoreRing").style.background="conic-gradient(var(--red) "+score+"%,#34383d 0)";
     }
+    const isNutritionKey=key=>key==="calories"||key==="protein";
+    const nutritionValue=(entry,key)=>key==="calories"?Number(entry.estimatedCalories):Number(entry.estimatedProtein);
+    const nutritionUnit=key=>key==="calories"?"kcal":"g protein";
+    function renderNutritionCards(){
+      const container=document.getElementById("nutritionCards");
+      container.innerHTML=["calories","protein"].map(key=>{
+        const tracker=trackers.find(item=>item.key===key),percent=Math.min(100,Math.round(tracker.target?tracker.value/tracker.target*100:0));
+        const recent=nutritionEntries.slice(0,3).map(entry=>'<div class="nutrition-record"><div><strong>'+esc(entry.mealDetails)+'</strong><small>'+fmt(entry.quantityGrams)+' g meal · '+fmt(entry.estimatedCalories)+' kcal · '+fmt(entry.estimatedProtein)+' g protein</small></div><div class="nutrition-record-value"><b>'+fmt(nutritionValue(entry,key))+' '+nutritionUnit(key)+'</b><time>'+new Date(entry.loggedOn+"T12:00:00").toLocaleDateString(undefined,{month:"short",day:"numeric"})+'</time></div><button data-edit-nutrition="'+entry.id+'" data-nutrition-key="'+key+'">✎ Edit record</button></div>').join("");
+        return '<article class="nutrition-card surface '+tracker.color+'"><div class="nutrition-top"><span class="metric-icon">'+tracker.icon+'</span><div><p>'+tracker.label+' today</p><strong>'+fmt(tracker.value)+'</strong><small>'+tracker.unit+'</small></div><button class="nutrition-add" data-add-nutrition="'+key+'">＋ Add meal</button></div><div class="progress"><i style="width:'+percent+'%;background:var(--accent)"></i></div><div class="nutrition-footer"><span>'+percent+'% of '+fmt(tracker.target)+' '+tracker.unit+'</span><button data-nutrition-history="'+key+'">Previous records ›</button></div><div class="nutrition-records">'+(recent||'<div class="empty-state">No meal records yet.</div>')+'</div></article>';
+      }).join("");
+      container.querySelectorAll("[data-add-nutrition]").forEach(button=>button.onclick=()=>openNutritionModal(button.dataset.addNutrition));
+      container.querySelectorAll("[data-nutrition-history]").forEach(button=>button.onclick=()=>{activeTracker=button.dataset.nutritionHistory;editingNutritionId=null;openModal(activeTracker,"history")});
+      container.querySelectorAll("[data-edit-nutrition]").forEach(button=>button.onclick=()=>openNutritionModal(button.dataset.nutritionKey,button.dataset.editNutrition));
+    }
+    function openNutritionModal(key,id=null){activeTracker=key;editingNutritionId=id;modalMode="manual";document.getElementById("modalBackdrop").classList.remove("hidden");renderModal()}
     function renderTrackers(){
-      document.getElementById("trackerList").innerHTML=trackers.map(tracker=>{const percent=Math.min(100,Math.round(tracker.target?tracker.value/tracker.target*100:0));return '<article class="tracker surface '+tracker.color+'"><div class="tracker-main"><span class="metric-icon">'+tracker.icon+'</span><div><p>'+tracker.label+'</p><div class="metric-value"><strong>'+fmt(tracker.value)+'</strong><span>'+tracker.unit+'</span></div></div><button class="quick" data-quick="'+tracker.key+'">＋ <small>+'+fmt(tracker.step)+'</small></button></div><div class="progress"><i style="width:'+percent+'%"></i></div><div class="tracker-status"><small>'+percent+"% of "+fmt(tracker.target)+" "+tracker.unit+"</small><time>"+(tracker.history[0]?.at||"No entries")+'</time></div><div class="tracker-actions"><button data-manual="'+tracker.key+'">⌨ Manual</button><button data-history="'+tracker.key+'">↶ History</button><button data-undo="'+tracker.key+'">↩ Undo</button><button data-settings="'+tracker.key+'">✎ Edit</button></div></article>'}).join("");
+      renderNutritionCards();
+      document.getElementById("trackerList").innerHTML=trackers.filter(tracker=>!isNutritionKey(tracker.key)).map(tracker=>{const percent=Math.min(100,Math.round(tracker.target?tracker.value/tracker.target*100:0));return '<article class="tracker surface '+tracker.color+'"><div class="tracker-main"><span class="metric-icon">'+tracker.icon+'</span><div><p>'+tracker.label+'</p><div class="metric-value"><strong>'+fmt(tracker.value)+'</strong><span>'+tracker.unit+'</span></div></div><button class="quick" data-quick="'+tracker.key+'">＋ <small>+'+fmt(tracker.step)+'</small></button></div><div class="progress"><i style="width:'+percent+'%"></i></div><div class="tracker-status"><small>'+percent+"% of "+fmt(tracker.target)+" "+tracker.unit+"</small><time>"+(tracker.history[0]?.at||"No entries")+'</time></div><div class="tracker-actions"><button data-manual="'+tracker.key+'">⌨ Manual</button><button data-history="'+tracker.key+'">↶ History</button><button data-undo="'+tracker.key+'">↩ Undo</button><button data-settings="'+tracker.key+'">✎ Edit</button></div></article>'}).join("");
       document.querySelectorAll("[data-quick]").forEach(button=>button.onclick=async()=>{button.disabled=true;try{await addTrackerEntry(button.dataset.quick,trackers.find(item=>item.key===button.dataset.quick).step,"quick_increment")}catch(error){alert(error.message)}finally{button.disabled=false}});
       document.querySelectorAll("[data-undo]").forEach(button=>button.onclick=()=>undoTracker(button.dataset.undo));
       document.querySelectorAll("[data-history]").forEach(button=>button.onclick=()=>openModal(button.dataset.history,"history"));
@@ -384,11 +405,37 @@
       return {buckets,labels};
     }
     function openModal(key,mode){activeTracker=key;modalMode=mode;document.getElementById("modalBackdrop").classList.remove("hidden");renderModal()}
+    function renderNutritionModal(tracker){
+      const content=document.getElementById("modalContent"),tabs=document.querySelectorAll(".modal-tabs button");
+      tabs.forEach(button=>{button.classList.toggle("active",button.dataset.mode===modalMode);button.textContent=button.dataset.mode==="history"?"Previous records":button.dataset.mode==="manual"?(editingNutritionId?"Edit meal":"Add meal"):"Daily target"});
+      if(modalMode==="history"){
+        content.innerHTML='<div class="history-heading"><span>MEAL RECORDS</span><button id="addMealFromHistory">＋ Add meal</button></div><div class="entries">'+(nutritionEntries.map(entry=>'<div class="entry"><span><b>'+esc(entry.mealDetails)+'</b><small>'+fmt(entry.quantityGrams)+' g · '+fmt(entry.estimatedCalories)+' kcal · '+fmt(entry.estimatedProtein)+' g protein</small></span><span style="text-align:right"><time>'+new Date(entry.loggedOn+"T12:00:00").toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"})+'</time><button class="history-edit" data-modal-edit-meal="'+entry.id+'">✎ Edit</button></span></div>').join("")||"<p>No meal records yet.</p>")+"</div>";
+        document.getElementById("addMealFromHistory").onclick=()=>{editingNutritionId=null;modalMode="manual";renderModal()};
+        content.querySelectorAll("[data-modal-edit-meal]").forEach(button=>button.onclick=()=>{editingNutritionId=button.dataset.modalEditMeal;modalMode="manual";renderModal()});
+      }else if(modalMode==="manual"){
+        const entry=nutritionEntries.find(item=>item.id===editingNutritionId);
+        content.innerHTML='<div class="nutrition-form-grid"><div class="full"><label for="mealDate">Date</label><input id="mealDate" class="date-input" type="date" max="'+localDateValue()+'" value="'+(entry?.loggedOn||localDateValue())+'"></div><div class="full"><label for="mealDetails">Meal details</label><textarea id="mealDetails" class="meal-textarea" maxlength="500" placeholder="e.g. Chicken breast, rice and salad">'+esc(entry?.mealDetails||"")+'</textarea></div><div><label for="mealQuantity">Meal qty (grams)</label><input id="mealQuantity" class="setting-input" type="number" min="0.01" step="0.01" placeholder="0" value="'+(entry?.quantityGrams||"")+'"></div><div><label for="mealCalories">Estimated calories</label><input id="mealCalories" class="setting-input" type="number" min="0" step="0.1" placeholder="0" value="'+(entry?.estimatedCalories??"")+'"></div><div class="full"><label for="mealProtein">Estimated protein (g)</label><input id="mealProtein" class="setting-input" type="number" min="0" step="0.1" placeholder="0" value="'+(entry?.estimatedProtein??"")+'"></div></div><button id="saveMeal" class="modal-save">'+(entry?"Update meal record":"Save meal record")+'</button>';
+        document.getElementById("saveMeal").onclick=async()=>{
+          if(!nutritionReady){alert("Run the included nutrition migration in Supabase first.");return}
+          const loggedOn=document.getElementById("mealDate").value,mealDetails=document.getElementById("mealDetails").value.trim(),quantityGrams=+document.getElementById("mealQuantity").value,estimatedCalories=+document.getElementById("mealCalories").value,estimatedProtein=+document.getElementById("mealProtein").value;
+          if(!loggedOn||!mealDetails||quantityGrams<=0||estimatedCalories<0||estimatedProtein<0||(estimatedCalories===0&&estimatedProtein===0)){alert("Add the date, meal details, quantity, and at least one nutrition estimate.");return}
+          const button=document.getElementById("saveMeal");button.disabled=true;
+          const payload={user_id:currentUser.id,logged_on:loggedOn,meal_details:mealDetails,quantity_grams:quantityGrams,estimated_calories:estimatedCalories,estimated_protein_g:estimatedProtein,updated_at:new Date().toISOString()};
+          const result=entry?await db.from("nutrition_entries").update(payload).eq("id",entry.id).eq("user_id",currentUser.id):await db.from("nutrition_entries").insert(payload);
+          if(result.error){button.disabled=false;alert("Meal record could not be saved: "+result.error.message);return}
+          await loadUserData();editingNutritionId=null;modalMode="history";renderModal();showToast(entry?"✓ Meal record updated":"✓ Meal record saved");
+        };
+      }else{
+        content.innerHTML='<label>Daily '+tracker.label.toLowerCase()+' target <small style="float:right">'+tracker.unit+'</small></label><input id="targetValue" class="setting-input" type="number" min="0" step="any" value="'+tracker.target+'"><button id="saveSettings" class="modal-save">Save target</button>';
+        document.getElementById("saveSettings").onclick=async()=>{const target=+document.getElementById("targetValue").value;if(target<=0)return;const button=document.getElementById("saveSettings");button.disabled=true;const result=await db.from("tracker_settings").upsert({user_id:currentUser.id,metric:tracker.key,daily_target:target,increment_amount:tracker.step,updated_at:new Date().toISOString()},{onConflict:"user_id,metric"});button.disabled=false;if(result.error){alert(result.error.message);return}tracker.target=target;renderTrackers();renderModal()};
+      }
+    }
     function renderModal(){
       const tracker=trackers.find(item=>item.key===activeTracker);if(!tracker)return;
       const modal=document.getElementById("trackerModal");modal.className="modal "+tracker.color;
       document.getElementById("modalIcon").textContent=tracker.icon;document.getElementById("modalLabel").textContent=tracker.label;document.getElementById("modalValue").innerHTML=fmt(tracker.value)+' <small style="font-size:10px;color:#777">'+tracker.unit+"</small>";
-      document.querySelectorAll(".modal-tabs button").forEach(button=>button.classList.toggle("active",button.dataset.mode===modalMode));
+      if(isNutritionKey(tracker.key)){renderNutritionModal(tracker);return}
+      document.querySelectorAll(".modal-tabs button").forEach(button=>{button.classList.toggle("active",button.dataset.mode===modalMode);button.textContent=button.dataset.mode==="history"?"History":button.dataset.mode==="manual"?"Manual entry":"Settings"});
       const content=document.getElementById("modalContent");
       if(modalMode==="history"){
         const chart=chartValues(tracker,chartPeriod),max=Math.max(...chart.buckets,1);
@@ -403,17 +450,18 @@
         document.getElementById("saveSettings").onclick=async()=>{const target=+document.getElementById("targetValue").value,step=+document.getElementById("stepValue").value;if(target<=0||step<=0)return;const button=document.getElementById("saveSettings");button.disabled=true;const result=await db.from("tracker_settings").upsert({user_id:currentUser.id,metric:tracker.key,daily_target:target,increment_amount:step,updated_at:new Date().toISOString()},{onConflict:"user_id,metric"});button.disabled=false;if(result.error){alert(result.error.message);return}tracker.target=target;tracker.step=step;modalMode="history";renderTrackers();renderModal()};
       }
     }
-    document.querySelectorAll(".modal-tabs button").forEach(button=>button.onclick=()=>{modalMode=button.dataset.mode;renderModal()});
-    document.getElementById("closeModal").onclick=()=>document.getElementById("modalBackdrop").classList.add("hidden");
+    document.querySelectorAll(".modal-tabs button").forEach(button=>button.onclick=()=>{modalMode=button.dataset.mode;if(isNutritionKey(activeTracker)&&modalMode==="manual")editingNutritionId=null;renderModal()});
+    document.getElementById("closeModal").onclick=()=>{editingNutritionId=null;document.getElementById("modalBackdrop").classList.add("hidden")};
     document.getElementById("modalBackdrop").onclick=event=>{if(event.target.id==="modalBackdrop")event.currentTarget.classList.add("hidden")};
 
     async function loadUserData(){
       if(!currentUser)return;
       document.getElementById("appShell").classList.add("loading");
-      const [workoutResult,settingsResult,entriesResult]=await Promise.all([
+      const [workoutResult,settingsResult,entriesResult,nutritionResult]=await Promise.all([
         db.from("workouts").select("id,muscle_group,sub_muscle_group,exercise_name,performed_at,workout_sets(id,set_number,reps,weight_kg)").order("performed_at",{ascending:false}),
         db.from("tracker_settings").select("metric,daily_target,increment_amount"),
-        db.from("tracker_entries").select("id,metric,value,entry_source,entered_at").order("entered_at",{ascending:false}).limit(500)
+        db.from("tracker_entries").select("id,metric,value,entry_source,entered_at").order("entered_at",{ascending:false}).limit(500),
+        db.from("nutrition_entries").select("id,logged_on,meal_details,quantity_grams,estimated_calories,estimated_protein_g,created_at,updated_at").order("logged_on",{ascending:false}).order("created_at",{ascending:false}).limit(500)
       ]);
       document.getElementById("appShell").classList.remove("loading");
       const error=workoutResult.error||settingsResult.error||entriesResult.error;
@@ -422,6 +470,11 @@
       trackers=freshTrackers();
       settingsResult.data.forEach(setting=>{const tracker=trackers.find(item=>item.key===setting.metric);if(tracker){tracker.target=Number(setting.daily_target);tracker.step=Number(setting.increment_amount)}});
       entriesResult.data.forEach(row=>{const tracker=trackers.find(item=>item.key===row.metric);if(!tracker)return;const entry={id:row.id,value:Number(row.value),source:entrySource(row.entry_source),enteredAt:row.entered_at,at:new Date(row.entered_at).toLocaleDateString(undefined,{month:"short",day:"numeric"})+" · "+new Date(row.entered_at).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})};tracker.history.push(entry);if(isSameLocalDay(row.entered_at))tracker.value=+(tracker.value+entry.value).toFixed(2)});
+      nutritionReady=!nutritionResult.error;
+      document.getElementById("nutritionSetupNotice").classList.toggle("hidden",nutritionReady);
+      nutritionEntries=nutritionReady?nutritionResult.data.map(row=>({id:row.id,loggedOn:row.logged_on,mealDetails:row.meal_details,quantityGrams:Number(row.quantity_grams),estimatedCalories:Number(row.estimated_calories),estimatedProtein:Number(row.estimated_protein_g),createdAt:row.created_at,updatedAt:row.updated_at})):[];
+      nutritionEntries.forEach(entry=>{["calories","protein"].forEach(key=>{const tracker=trackers.find(item=>item.key===key),value=nutritionValue(entry,key),enteredAt=entry.loggedOn+"T12:00:00";tracker.history.push({id:"nutrition-"+entry.id,value,source:"Meal: "+entry.mealDetails,enteredAt,at:new Date(enteredAt).toLocaleDateString(undefined,{month:"short",day:"numeric"})});if(isSameLocalDay(enteredAt))tracker.value=+(tracker.value+value).toFixed(2)})});
+      trackers.forEach(tracker=>tracker.history.sort((a,b)=>new Date(b.enteredAt)-new Date(a.enteredAt)));
       renderWorkouts();renderTrackers();
     }
 
@@ -454,7 +507,7 @@
     };
     async function handleSession(session){
       if(!session){
-        currentUser=null;loadedUserId=null;workouts=[];trackers=freshTrackers();
+        currentUser=null;loadedUserId=null;workouts=[];nutritionEntries=[];trackers=freshTrackers();
         appShell.classList.add("hidden");authScreen.classList.remove("hidden");renderWorkouts();renderTrackers();return;
       }
       currentUser=session.user;authScreen.classList.add("hidden");appShell.classList.remove("hidden");
