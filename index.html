@@ -64,6 +64,15 @@
     .calorie-card{padding:16px 12px;border-radius:40px;background:rgba(255,255,255,.9)}.calorie-card:after{opacity:.07}.calorie-card span{color:#65726e;font-size:10px}.calorie-card small{color:#687671;font-size:11px}.calorie-card button{border-radius:12px;background:#fff;color:var(--paper);font-size:11px}.net-calorie-card{border-radius:40px;background:linear-gradient(125deg,#171e19,#24372e)}.net-calorie-card.surplus{background:linear-gradient(125deg,#3b1b1f,#171e19)}.net-calorie-card span{color:#b7c6c2}.net-calorie-card small{color:#d5ddd9}.calorie-periods button{border-color:var(--border);border-radius:16px;background:var(--soft);color:#61706b;font-size:12px}.calorie-periods button.active{border-color:var(--red);background:var(--red);color:#fff}.calorie-table th,.calorie-table td{border-top-color:var(--border);font-size:12px}.calorie-table th{color:#65726e;font-size:10px}.calorie-table td{color:#52605c}.calorie-table td:first-child{color:var(--paper)}.table-hint{color:#65726e;font-size:11px}
     .report-periods{border:1px solid var(--border);border-radius:18px;background:var(--soft)}.report-periods button{border-radius:14px;color:#61706b;font-family:var(--ui)}.report-periods button.active{background:var(--red);color:#fff}
   </style>
+  <style>
+    /* Mobile-first UX structure */
+    button{min-height:44px}.content{padding-top:20px}.today-head,.screen-title{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.today-head h1,.screen-title h1{margin:5px 0 2px;font-size:32px;line-height:1.04;text-transform:none}.today-head .subcopy,.screen-title .subcopy{margin-top:8px;font-size:14px}.today-date{width:112px;margin:0}.today-date span{display:block;margin-bottom:5px;color:#73807c;font-size:10px;font-weight:900;letter-spacing:.1em}.today-date input{width:100%;height:44px;padding:0 8px;border:1px solid var(--border);border-radius:14px;background:#fff;color:var(--paper);font-size:11px}.today-summary{margin:18px 0 14px;display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.summary-metric{min-width:0;padding:11px 8px;border:1px solid var(--border);border-radius:18px;background:rgba(255,255,255,.78);text-align:center}.summary-metric b,.summary-metric small{display:block}.summary-metric b{font-size:17px}.summary-metric small{margin-top:2px;overflow:hidden;color:#6d7a76;font-size:10px;text-overflow:ellipsis;white-space:nowrap}.primary{margin:14px 0 10px;min-height:68px;border-radius:24px}.workout-shortcuts{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.workout-shortcuts button{min-width:0;padding:10px 7px;border:1px solid var(--border);border-radius:18px;display:flex;flex-direction:column;align-items:flex-start;gap:5px;background:#fff;color:var(--paper);text-align:left}.workout-shortcuts button>span,.workout-shortcuts b,.workout-shortcuts small{display:block}.workout-shortcuts b{font-size:11px}.workout-shortcuts small{margin-top:2px;color:#77837f;font-size:9px;line-height:1.25}.composer{margin-top:14px}.save{position:sticky;bottom:82px;z-index:5;min-height:50px;box-shadow:0 12px 24px rgba(202,0,19,.2)}
+    .screen-title{display:block}.screen-title>.score{margin:15px 0 14px}.tracker-list{gap:10px}.tracker{border-radius:24px}.tracker-actions{display:flex;justify-content:flex-end}.tracker-actions button{min-height:40px;padding:8px 12px;border-radius:12px}.tracker-actions [data-manual],.tracker-actions [data-undo],.tracker-actions [data-settings]{display:none}.tracker-open{margin-right:auto!important;color:var(--paper)!important}.back-link{margin-bottom:8px;padding:8px 0;border:0;background:transparent;color:var(--red);font-weight:900}.progress-tabs{position:sticky;top:72px;z-index:12;margin:18px 0 14px;padding:5px;border:1px solid var(--border);border-radius:18px;display:grid;grid-template-columns:repeat(3,1fr);background:rgba(238,235,227,.92);backdrop-filter:blur(12px)}.progress-tabs button{border:0;border-radius:14px;background:transparent;color:#65726e;font-weight:900}.progress-tabs button.active{background:var(--paper);color:#fff}.secondary-action,.logout-action{width:100%;margin-top:16px;border:0;border-radius:18px;background:var(--paper);color:#fff;font-weight:900}.logout-action{background:#fff;color:var(--red);border:1px solid rgba(202,0,19,.22)}
+    .profile-card{padding:16px;display:flex;align-items:center;gap:12px}.profile-avatar{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:var(--red);color:#fff;font-size:20px;font-weight:900}.profile-card strong,.profile-card small{display:block}.profile-card small{margin-top:3px;color:#71807b;font-size:12px}.setting-row{width:100%;padding:15px;border:0;display:flex;align-items:center;justify-content:space-between;background:#fff;color:var(--paper);text-align:left}.setting-row span b,.setting-row span small{display:block}.setting-row span small{margin-top:4px;color:#72807b;font-size:11px}.profile-targets{display:grid;gap:8px}.target-row{width:100%;padding:13px 15px;border:1px solid var(--border);border-radius:18px;display:flex;align-items:center;justify-content:space-between;background:#fff;color:var(--paper);text-align:left}.target-row span{display:flex;align-items:center;gap:9px}.target-row .metric-icon{width:34px;height:34px}.target-row small{color:#6e7b77}
+    .bottom{height:72px}.log-nav{position:relative;overflow:visible}.log-nav b{width:50px;height:50px;margin-top:-22px;border:5px solid var(--bg);border-radius:50%;display:grid;place-items:center;background:var(--red);color:#fff;font-size:26px;box-shadow:0 9px 24px rgba(202,0,19,.26)}.log-nav span{margin-top:-2px}.log-nav.active{background:transparent;color:var(--paper)}.log-sheet{width:min(100%,480px);padding:10px 17px 24px;border:1px solid var(--border);border-radius:32px 32px 22px 22px;background:var(--bg)}.log-sheet header{display:flex;align-items:flex-start;justify-content:space-between}.log-sheet h2{margin-top:4px;text-transform:none}.log-grid{margin-top:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.log-grid button{padding:11px;border:1px solid var(--border);border-radius:18px;display:flex;align-items:center;gap:10px;background:#fff;color:var(--paper);text-align:left;font-weight:900}.log-grid b{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:var(--soft);color:var(--red);font-size:11px}.toast{display:flex;align-items:center;gap:10px}.toast button{min-height:32px;padding:4px 8px;border:0;border-radius:9px;background:var(--red);color:#fff;font-weight:900}.workout-menu{position:relative}.more-workout{width:40px;height:40px;border:0;border-radius:12px;background:var(--soft);color:var(--paper);font-size:18px}.workout-popover{position:absolute;z-index:8;right:0;top:42px;width:105px;padding:4px;border:1px solid var(--border);border-radius:13px;display:grid;background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.12)}.workout-popover button{border:0;background:transparent;color:var(--paper);font-size:11px;text-align:left}.workout-popover .delete-workout{color:var(--red)}
+    .workout{grid-template-columns:34px minmax(0,1fr) auto auto}
+    @media(max-width:390px){.today-head{display:block}.today-date{width:100%;margin-top:12px}.today-summary{grid-template-columns:repeat(2,1fr)}.workout-shortcuts{grid-template-columns:1fr}.workout-shortcuts button{flex-direction:row;align-items:center}.calorie-cards{grid-template-columns:1fr}.progress-tabs{top:68px}}
+  </style>
 </head>
 <body>
   <section id="authScreen" class="auth-screen">
@@ -81,8 +90,10 @@
     <header class="top"><div class="logo">F</div><div><p class="eyebrow" id="todayLabel">TODAY</p><p class="brand">FORGE</p></div><button id="logoutButton" class="avatar" title="Sign out" aria-label="Sign out">⇥</button></header>
     <div class="content">
       <section id="trainScreen" class="screen">
-        <div class="hero"><p class="kicker">STRENGTH TRAINING</p><h1>What are you<br><span class="outline">hitting today?</span></h1><p class="subcopy">Build your session one exercise at a time.</p></div>
-        <button id="openComposer" class="primary"><span class="plusbox">＋</span><span><strong>Add workout</strong><small>Choose a muscle group</small></span><span class="arrow">›</span></button>
+        <div class="today-head"><div><p class="kicker">TODAY</p><h1>Ready to move?</h1><p class="subcopy">Your training and daily goals, together.</p></div><label class="today-date"><span>DATE</span><input id="todayViewDate" type="date"></label></div>
+        <div id="todaySummary" class="today-summary"></div>
+        <button id="openComposer" class="primary"><span class="plusbox">＋</span><span><strong>Start workout</strong><small>Strength, warm-up, cardio or HIIT</small></span><span class="arrow">›</span></button>
+        <div class="workout-shortcuts"><button id="repeatLastWorkout">↻<span><b>Repeat last</b><small>Copy your latest exercise</small></span></button><button id="recentWorkoutShortcut">◷<span><b>Recent workouts</b><small>Choose from history</small></span></button><button id="emptyWorkoutShortcut">＋<span><b>Start empty</b><small>Build a fresh session</small></span></button></div>
         <div id="composer" class="composer surface hidden">
           <div class="row-title"><div><span>01</span><h2>Choose muscle</h2></div><button id="closeComposer" class="close">×</button></div>
           <label for="workoutDate">Workout date</label><input id="workoutDate" class="date-input" type="date" required><small class="date-help">Choose an earlier date if you are recording a workout from a previous day.</small>
@@ -94,19 +105,15 @@
             <button id="addSet" class="dashed">＋ Add another set</button></div><button id="saveWorkout" class="save">✓ Save exercise</button>
           </div>
         </div>
-        <div class="section-label"><span>TODAY'S SESSION</span><b id="exerciseCount">1 EXERCISE</b></div><div id="workoutList" class="workouts"></div>
+        <div class="section-label"><span id="sessionDateLabel">TODAY'S SESSION</span><b id="exerciseCount">0 EXERCISES</b></div><div id="workoutList" class="workouts"></div>
       </section>
       <section id="trackScreen" class="screen hidden">
-        <div class="hero compact-hero"><p class="kicker">DAILY TRACKERS</p><h1>Small inputs. <span class="outline">Big momentum.</span></h1><p class="subcopy">Keep today moving in the right direction.</p></div>
-        <div class="score surface"><div><span>DAILY SCORE</span><strong id="dailyScore">0</strong><small>/100</small></div><div id="scoreRing" class="ring"><b id="scorePercent">0%</b></div></div>
-        <div class="section-label"><span>MEAL NUTRITION</span><b>CALORIES + PROTEIN</b></div>
-        <div id="nutritionSetupNotice" class="nutrition-notice hidden">Meal logging needs the included Supabase nutrition migration before records can be saved.</div>
-        <div id="nutritionCards" class="nutrition-grid"></div>
-        <div class="section-label"><span>DAILY METRICS</span><b>QUICK TRACK</b></div>
-        <div id="trackerList" class="tracker-list"></div>
-      </section>
-      <section id="caloriesScreen" class="screen hidden">
-        <div class="hero calorie-hero"><p class="kicker">CALORIE BALANCE</p><h1>Your energy.<br><span class="outline">One clear view.</span></h1><p class="subcopy">See what came in, what activity burned, and where your target stands.</p></div>
+        <div id="trackOverview"><div class="screen-title"><div><p class="kicker">TRACK</p><h1>Daily goals</h1><p class="subcopy">Quick updates now. Deeper detail when you need it.</p></div><div class="score surface"><div><span>DAILY SCORE</span><strong id="dailyScore">0</strong><small>/100</small></div><div id="scoreRing" class="ring"><b id="scorePercent">0%</b></div></div></div>
+          <div id="nutritionSetupNotice" class="nutrition-notice hidden">Meal logging needs the included Supabase nutrition migration before records can be saved.</div>
+          <div id="nutritionCards" class="nutrition-grid hidden"></div>
+          <div id="trackerList" class="tracker-list"></div>
+        </div>
+        <div id="calorieDetail" class="hidden"><button id="backToTrack" class="back-link">‹ All trackers</button><div class="hero calorie-hero"><p class="kicker">CALORIE BALANCE</p><h1>Your energy.<br><span class="outline">One clear view.</span></h1><p class="subcopy">Consumed, burned and deficit in one place.</p></div>
         <div class="calorie-cards">
           <article class="calorie-card consumed surface"><span>CONSUMED TODAY</span><strong id="caloriesConsumedToday">0</strong><small>kcal eaten</small><button id="addCaloriesFromTab">＋ Add calories</button></article>
           <article class="calorie-card workout-calories surface"><span>BURNED BY WORKOUT</span><strong id="caloriesWorkoutToday">0</strong><small>kcal estimated</small></article>
@@ -119,26 +126,22 @@
           <div class="calorie-table-wrap"><table class="calorie-table"><thead><tr><th>PERIOD</th><th>TARGET</th><th>CONSUMED</th><th>WORKOUT BURN</th><th>STEPS BURN</th><th>NET DEFICIT</th></tr></thead><tbody id="calorieTableBody"></tbody></table></div>
           <p class="table-hint">Step calories are estimated from your recorded steps and body weight. Workout calories use each saved exercise estimate.</p>
         </article>
+        </div>
       </section>
-      <section id="reportsScreen" class="screen hidden">
-        <div class="report-head"><div><p class="kicker">YOUR PROGRESS</p><h1>Training report</h1></div><select><option>This week</option><option>This month</option></select></div>
-        <div class="stats"><article class="stat"><span>WORKOUTS</span><strong id="reportWorkoutCount">0</strong><small>recorded exercises</small></article><article class="stat"><span>VOLUME</span><strong id="reportVolume">0</strong><small>kilograms lifted</small></article><article class="stat"><span>SETS</span><strong id="reportSets">0</strong><small>completed sets</small></article></div>
-        <article class="chart-card surface"><div class="chart-title"><div><span>LAST 7 DAYS</span><strong id="weeklyVolume">0 kg</strong></div><b id="weeklyChange">LIVE</b></div><div id="reportBars" class="bars"></div></article>
-        <div class="tracker-report-head"><div><p class="kicker">ALL TRACKED METRICS</p><h2>Tracker trends</h2></div><div id="reportPeriods" class="report-periods"><button data-report-period="daily" class="active">Daily</button><button data-report-period="weekly">Weekly</button><button data-report-period="monthly">Monthly</button></div></div>
-        <div id="metricReports" class="metric-report-grid"></div>
-        <div class="section-label"><span>RECENT WORKOUTS</span><b>DATABASE</b></div><div id="reportHistory" class="history-list"></div>
+      <section id="progressScreen" class="screen hidden">
+        <div class="screen-title"><div><p class="kicker">PROGRESS</p><h1>See what works</h1><p class="subcopy">Trends and records that help guide your next decision.</p></div></div>
+        <div class="progress-tabs"><button data-progress-tab="workouts" class="active">Workouts</button><button data-progress-tab="nutrition">Nutrition</button><button data-progress-tab="body">Body</button></div>
+        <div id="progressWorkouts" class="progress-pane"><div class="stats"><article class="stat"><span>WORKOUTS</span><strong id="reportWorkoutCount">0</strong><small>recorded exercises</small></article><article class="stat"><span>VOLUME</span><strong id="reportVolume">0</strong><small>kilograms lifted</small></article><article class="stat"><span>SETS</span><strong id="reportSets">0</strong><small>completed sets</small></article></div><article class="chart-card surface"><div class="chart-title"><div><span>LAST 7 DAYS</span><strong id="weeklyVolume">0 kg</strong></div><b id="weeklyChange">LIVE</b></div><div id="reportBars" class="bars"></div></article><div class="stats history-overview"><article class="stat"><span>SESSIONS</span><strong id="historySessionCount">0</strong><small>training days</small></article><article class="stat"><span>EXERCISES</span><strong id="historyExerciseCount">0</strong><small>saved records</small></article><article class="stat"><span>VOLUME</span><strong id="historyVolume">0</strong><small>kilograms lifted</small></article></div><div class="section-label"><span>WORKOUT HISTORY</span><b id="historyRecordCount">0 RECORDS</b></div><div id="sessionHistory" class="session-list"></div><div id="reportHistory" class="history-list hidden"></div></div>
+        <div id="progressNutrition" class="progress-pane hidden"><div class="tracker-report-head"><div><p class="kicker">NUTRITION TRENDS</p><h2>Calories, protein & water</h2></div><div class="report-periods"><button data-report-period="daily" class="active">Day</button><button data-report-period="weekly">Week</button><button data-report-period="monthly">Month</button></div></div><div id="nutritionMetricReports" class="metric-report-grid"></div><button id="openCaloriesProgress" class="secondary-action">Open calorie balance</button></div>
+        <div id="progressBody" class="progress-pane hidden"><div class="tracker-report-head"><div><p class="kicker">BODY & RECOVERY</p><h2>Weight, steps & sleep</h2></div><div class="report-periods"><button data-report-period="daily" class="active">Day</button><button data-report-period="weekly">Week</button><button data-report-period="monthly">Month</button></div></div><div id="bodyMetricReports" class="metric-report-grid"></div><div id="metricReports" class="hidden"></div></div>
       </section>
-      <section id="historyScreen" class="screen hidden">
-        <div class="hero history-hero"><p class="kicker">WORKOUT LOG</p><h1>Every session.<br><span class="outline">One glance.</span></h1><p class="subcopy">Review complete past workouts, sets and training volume.</p></div>
-        <div class="stats history-overview"><article class="stat"><span>SESSIONS</span><strong id="historySessionCount">0</strong><small>training days</small></article><article class="stat"><span>EXERCISES</span><strong id="historyExerciseCount">0</strong><small>saved records</small></article><article class="stat"><span>VOLUME</span><strong id="historyVolume">0</strong><small>kilograms lifted</small></article></div>
-        <div class="section-label"><span>PREVIOUS WORKOUTS</span><b id="historyRecordCount">0 RECORDS</b></div>
-        <div id="sessionHistory" class="session-list"></div>
-      </section>
+      <section id="profileScreen" class="screen hidden"><div class="screen-title"><div><p class="kicker">PROFILE</p><h1>Your setup</h1><p class="subcopy">Keep estimates, goals and units accurate.</p></div></div><article class="profile-card surface"><div class="profile-avatar">F</div><div><strong id="profileEmail">Signed in</strong><small>Forge member</small></div></article><div class="section-label"><span>BODY</span><b>CALORIE ESTIMATES</b></div><button id="profileWeight" class="setting-row surface"><span><b>Current weight</b><small>Used for activity calorie estimates</small></span><strong id="profileWeightValue">Not set</strong></button><div class="section-label"><span>DAILY TARGETS</span><b>TAP TO EDIT</b></div><div id="profileTargets" class="profile-targets"></div><button id="profileLogout" class="logout-action">Sign out</button></section>
     </div>
-    <nav class="bottom"><button class="nav active" data-screen="train"><b>⚒</b><span>Train</span></button><button class="nav" data-screen="track"><b>▥</b><span>Track</span></button><button class="nav" data-screen="calories"><b>◒</b><span>Calories</span></button><button class="nav" data-screen="history"><b>◷</b><span>History</span></button><button class="nav" data-screen="reports"><b>▥</b><span>Reports</span></button></nav>
+    <nav class="bottom"><button class="nav active" data-screen="train"><b>⌂</b><span>Today</span></button><button class="nav" data-screen="track"><b>◫</b><span>Track</span></button><button id="universalLog" class="nav log-nav"><b>＋</b><span>Log</span></button><button class="nav" data-screen="progress"><b>↗</b><span>Progress</span></button><button class="nav" data-screen="profile"><b>○</b><span>Profile</span></button></nav>
   </main>
+  <div id="logBackdrop" class="backdrop hidden"><section class="log-sheet"><div class="handle"></div><header><div><p class="kicker">QUICK LOG</p><h2>What do you want to add?</h2></div><button id="closeLog" class="close">×</button></header><div class="log-grid"><button data-log="strength"><b>ST</b><span>Strength</span></button><button data-log="warmup"><b>WU</b><span>Warm-up</span></button><button data-log="cardio"><b>CA</b><span>Cardio</span></button><button data-log="hiit"><b>HI</b><span>HIIT</span></button><button data-log="meal"><b>ME</b><span>Meal</span></button><button data-log="water"><b>WT</b><span>Water</span></button><button data-log="protein"><b>PR</b><span>Protein</span></button><button data-log="weight"><b>KG</b><span>Weight</span></button><button data-log="steps"><b>ST</b><span>Steps</span></button><button data-log="sleep"><b>SL</b><span>Sleep</span></button></div></section></div>
   <div id="modalBackdrop" class="backdrop hidden"><section id="trackerModal" class="modal"><div class="handle"></div><header class="modal-header"><div><span id="modalIcon" class="metric-icon">FL</span><div><p id="modalLabel">Calories</p><strong id="modalValue">0</strong></div></div><button id="closeModal" class="close">×</button></header><div class="modal-tabs"><button data-mode="history" class="active">History</button><button data-mode="manual">Manual entry</button><button data-mode="settings">Settings</button></div><div id="modalContent"></div></section></div>
-  <div id="toast" class="toast hidden">✓ Exercise saved</div>
+  <div id="toast" class="toast hidden"><span id="toastText">✓ Exercise saved</span><button id="toastAction" class="hidden">Undo</button></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script type="text/plain" id="legacyPrototypeScript">
     const muscleMap={
@@ -196,9 +199,10 @@
       Legs:["Quads","Hamstrings","Glutes","Calves"],
       Abs:["Upper abs","Lower abs","Obliques"],
       Forearms:["Flexors","Extensors","Grip"],
-      Cardio:["Treadmill","Elliptical","Cycling","Rowing","Stairs"]
+      Cardio:["Treadmill","Elliptical","Cycling","Rowing","Stairs"],
+      HIIT:["Intervals","Circuit","Tabata","Sprints"]
     };
-    const abbreviations={Warmup:"WU",Chest:"CH",Triceps:"TR",Biceps:"BI",Back:"BK",Shoulders:"SH",Legs:"LG",Abs:"AB",Forearms:"FR",Cardio:"CA"};
+    const abbreviations={Warmup:"WU",Chest:"CH",Triceps:"TR",Biceps:"BI",Back:"BK",Shoulders:"SH",Legs:"LG",Abs:"AB",Forearms:"FR",Cardio:"CA",HIIT:"HI"};
     const trackerDefaults=[
       {key:"calories",icon:"FL",label:"Calories",target:2400,unit:"kcal",step:50,color:"red"},
       {key:"protein",icon:"PR",label:"Protein",target:160,unit:"g",step:5,color:"blue"},
@@ -210,7 +214,7 @@
     let currentUser=null,loadedUserId=null,authMode="signin";
     let selectedMuscle="",selectedSub="",sets=[{reps:10,weight:20}],previousSets=[],editingWorkoutId=null;
     let activeTracker=null,modalMode="history",chartPeriod="daily",reportMetricPeriod="daily",caloriePeriod="daily",editingNutritionId=null;
-    let workouts=[],nutritionEntries=[],nutritionReady=true,profileWeightKg=null,workoutEnhancementsReady=true;
+    let workouts=[],nutritionEntries=[],nutritionReady=true,profileWeightKg=null,workoutEnhancementsReady=true,selectedTodayDate=localDateValue(),pendingDeletedWorkout=null,toastTimer=null;
     let trackers=freshTrackers();
 
     const esc=value=>String(value??"").replace(/[&<>"]/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[char]));
@@ -220,46 +224,49 @@
     const localDateValue=value=>{const date=value?new Date(value):new Date();return [date.getFullYear(),String(date.getMonth()+1).padStart(2,"0"),String(date.getDate()).padStart(2,"0")].join("-")};
     const performedAtForDate=(dateValue,existingValue=null)=>{const [year,month,day]=dateValue.split("-").map(Number),time=existingValue?new Date(existingValue):new Date();return new Date(year,month-1,day,time.getHours(),time.getMinutes(),time.getSeconds(),time.getMilliseconds()).toISOString()};
     const entrySource=value=>value==="quick_increment"?"Quick increment":value==="manual"?"Manual entry":String(value||"Entry").replaceAll("_"," ");
-    const isTimedWorkout=muscle=>muscle==="Warmup"||muscle==="Cardio";
-    const activityMet=(muscle,sub)=>muscle==="Warmup"?3.5:muscle==="Cardio"?({Treadmill:8.3,Elliptical:5,Cycling:7,Rowing:7,Stairs:8.8}[sub]||6):5;
-    const assumedMinutes=(muscle,setCount)=>muscle==="Warmup"?10:muscle==="Cardio"?20:Math.max(10,setCount*3);
+    const isTimedWorkout=muscle=>muscle==="Warmup"||muscle==="Cardio"||muscle==="HIIT";
+    const activityMet=(muscle,sub)=>muscle==="Warmup"?3.5:muscle==="HIIT"?9:muscle==="Cardio"?({Treadmill:8.3,Elliptical:5,Cycling:7,Rowing:7,Stairs:8.8}[sub]||6):5;
+    const assumedMinutes=(muscle,setCount)=>muscle==="Warmup"?10:muscle==="Cardio"?20:muscle==="HIIT"?15:Math.max(10,setCount*3);
     const estimatedBurn=(muscle,sub,minutes,setCount,weight=profileWeightKg)=>weight?Math.round(activityMet(muscle,sub)*3.5*Number(weight)/200*(Number(minutes)||assumedMinutes(muscle,setCount))):0;
     const workoutBurn=workout=>Number(workout.estimatedCaloriesBurned)||0;
     const todayWorkoutBurn=()=>workouts.filter(workout=>isSameLocalDay(workout.performedAt)).reduce((sum,workout)=>sum+workoutBurn(workout),0);
     const stepCalories=(steps,weight=profileWeightKg)=>weight?Math.round(Number(steps||0)*Number(weight)*0.0005):0;
     function freshTrackers(){return trackerDefaults.map(item=>Object.assign({},item,{value:0,history:[]}))}
-    function showToast(message){const toast=document.getElementById("toast");toast.textContent=message;toast.classList.remove("hidden");setTimeout(()=>toast.classList.add("hidden"),1800)}
+    function showToast(message,actionLabel="",action=null){const toast=document.getElementById("toast"),actionButton=document.getElementById("toastAction");clearTimeout(toastTimer);document.getElementById("toastText").textContent=message;actionButton.textContent=actionLabel;actionButton.classList.toggle("hidden",!action);actionButton.onclick=action||null;toast.classList.remove("hidden");toastTimer=setTimeout(()=>toast.classList.add("hidden"),action?5000:1800)}
 
     document.getElementById("todayLabel").textContent=new Date().toLocaleDateString(undefined,{weekday:"long",month:"short",day:"numeric"}).toUpperCase();
     function updateScreen(name){
       document.querySelectorAll(".nav").forEach(item=>item.classList.remove("active"));
-      document.querySelector('.nav[data-screen="'+name+'"]').classList.add("active");
-      ["train","track","calories","history","reports"].forEach(screen=>document.getElementById(screen+"Screen").classList.toggle("hidden",screen!==name));
-      if(name==="calories")renderCalories();
+      document.querySelector('.nav[data-screen="'+name+'"]')?.classList.add("active");
+      ["train","track","progress","profile"].forEach(screen=>document.getElementById(screen+"Screen").classList.toggle("hidden",screen!==name));
+      if(name==="track")showTrackOverview();
+      if(name==="profile")renderProfile();
     }
     function showScreen(name){
       if(document.startViewTransition)document.startViewTransition(()=>updateScreen(name));
       else updateScreen(name);
     }
-    document.querySelectorAll(".nav").forEach(button=>button.onclick=()=>showScreen(button.dataset.screen));
+    document.querySelectorAll(".nav[data-screen]").forEach(button=>button.onclick=()=>showScreen(button.dataset.screen));
     const workoutDateInput=document.getElementById("workoutDate");
+    const todayViewDate=document.getElementById("todayViewDate");
     workoutDateInput.max=localDateValue();
     workoutDateInput.value=localDateValue();
+    todayViewDate.max=localDateValue();todayViewDate.value=selectedTodayDate;todayViewDate.onchange=()=>{selectedTodayDate=todayViewDate.value||localDateValue();renderWorkouts()};
 
-    const muscleColors={Warmup:"#ffb020",Chest:"#ff4d67",Triceps:"#9b6bff",Biceps:"#4b8cff",Back:"#00b8a9",Shoulders:"#ec6dff",Legs:"#46c985",Abs:"#ff8a3d",Forearms:"#8d9aa8",Cardio:"#25c7e8"};
-    const muscleZone=name=>({Warmup:"warmup",Chest:"chest",Triceps:"triceps",Biceps:"biceps",Back:"back",Shoulders:"shoulders",Legs:"legs",Abs:"abs",Forearms:"forearms",Cardio:"cardio"}[name]||"warmup");
+    const muscleColors={Warmup:"#ffb020",Chest:"#ff4d67",Triceps:"#9b6bff",Biceps:"#4b8cff",Back:"#00b8a9",Shoulders:"#ec6dff",Legs:"#46c985",Abs:"#ff8a3d",Forearms:"#8d9aa8",Cardio:"#25c7e8",HIIT:"#ca0013"};
+    const muscleZone=name=>({Warmup:"warmup",Chest:"chest",Triceps:"triceps",Biceps:"biceps",Back:"back",Shoulders:"shoulders",Legs:"legs",Abs:"abs",Forearms:"forearms",Cardio:"cardio",HIIT:"cardio"}[name]||"warmup");
     const muscleFigure=name=>'<span class="muscle-visual zone-'+muscleZone(name)+'" aria-hidden="true"><i class="head"></i><i class="torso"></i><i class="arm-l"></i><i class="arm-r"></i><i class="leg-l"></i><i class="leg-r"></i><em></em></span>';
     function renderMuscles(){
       document.getElementById("muscles").innerHTML=Object.keys(muscleMap).map(name=>'<button class="muscle '+(name===selectedMuscle?"active":"")+'" style="--muscle-tone:'+muscleColors[name]+'" data-muscle="'+name+'" aria-label="Select '+name+'"><b>'+abbreviations[name]+'</b>'+muscleFigure(name)+'<span class="muscle-name">'+name+'</span></button>').join("");
       document.querySelectorAll("[data-muscle]").forEach(button=>button.onclick=()=>{
-        selectedMuscle=button.dataset.muscle;selectedSub="";previousSets=[];
-        document.getElementById("targetAreaLabel").textContent=selectedMuscle==="Cardio"?"Cardio type":selectedMuscle==="Warmup"?"Warmup type":"Target area";
+        selectedMuscle=button.dataset.muscle;selectedSub=(muscleMap[selectedMuscle]||[])[0]||"General";previousSets=[];
+        document.getElementById("targetAreaLabel").textContent=selectedMuscle==="Cardio"?"Cardio type":selectedMuscle==="Warmup"?"Warmup type":selectedMuscle==="HIIT"?"HIIT type":"Target area (optional change)";
         document.getElementById("exerciseName").placeholder=selectedMuscle==="Cardio"?"Optional notes or machine":selectedMuscle==="Warmup"?"Optional warmup details":"e.g. Incline dumbbell press";
         document.getElementById("minutesBlock").classList.toggle("hidden",!isTimedWorkout(selectedMuscle));
         document.getElementById("strengthSetFields").classList.toggle("hidden",isTimedWorkout(selectedMuscle));
-        renderMuscles();renderSubMuscles();
+        const previous=workouts.find(workout=>workout.muscle===selectedMuscle&&workout.sub===selectedSub);previousSets=previous?previous.sets.map(set=>({reps:set.reps,weight:set.weight})):[];renderMuscles();renderSubMuscles();renderSets();
         document.getElementById("targetBlock").classList.remove("hidden");
-        document.getElementById("setsBlock").classList.add("hidden");
+        document.getElementById("setsBlock").classList.remove("hidden");
       });
     }
     function renderSubMuscles(){
@@ -311,23 +318,35 @@
       document.getElementById("setsBlock").classList.add("hidden");
       renderMuscles();
     }
-    document.getElementById("openComposer").onclick=()=>{workoutDateInput.value=localDateValue();document.getElementById("openComposer").classList.add("hidden");document.getElementById("composer").classList.remove("hidden")};
+    function openComposerFor(muscle=""){
+      showScreen("train");workoutDateInput.value=selectedTodayDate;document.getElementById("openComposer").classList.add("hidden");document.getElementById("composer").classList.remove("hidden");
+      if(muscle){selectedMuscle=muscle;selectedSub=(muscleMap[muscle]||[])[0]||"General";previousSets=[];document.getElementById("targetAreaLabel").textContent=muscle==="Cardio"?"Cardio type":muscle==="Warmup"?"Warmup type":muscle==="HIIT"?"HIIT type":"Target area (optional change)";document.getElementById("minutesBlock").classList.toggle("hidden",!isTimedWorkout(muscle));document.getElementById("strengthSetFields").classList.toggle("hidden",isTimedWorkout(muscle));renderMuscles();renderSubMuscles();renderSets();document.getElementById("targetBlock").classList.remove("hidden");document.getElementById("setsBlock").classList.remove("hidden")}
+      setTimeout(()=>document.getElementById("composer").scrollIntoView({behavior:"smooth",block:"start"}),40);
+    }
+    document.getElementById("openComposer").onclick=()=>openComposerFor();
+    document.getElementById("emptyWorkoutShortcut").onclick=()=>openComposerFor();
+    document.getElementById("recentWorkoutShortcut").onclick=()=>{showScreen("progress");setProgressTab("workouts")};
+    document.getElementById("repeatLastWorkout").onclick=()=>{const workout=workouts[0];if(!workout){openComposerFor();showToast("No previous workout yet");return}openComposerFor(workout.muscle);selectedSub=workout.sub;sets=workout.sets.length?workout.sets.slice(0,5).map(set=>({reps:set.reps,weight:set.weight})):[{reps:10,weight:20}];previousSets=sets.map(set=>({...set}));document.getElementById("exerciseName").value=workout.exercise;document.getElementById("workoutMinutes").value=workout.minutes||"";document.getElementById("setsBlock").classList.remove("hidden");renderSubMuscles();renderSets();updateBurnPreview()};
     document.getElementById("closeComposer").onclick=resetComposer;
     document.getElementById("addSet").onclick=()=>{if(sets.length<5){sets.push(Object.assign({},sets.at(-1)));renderSets()}};
     document.getElementById("copyPrevious").onclick=()=>{if(previousSets.length){sets=previousSets.slice(0,5).map(set=>Object.assign({},set));renderSets()}};
 
     function workoutVolume(workout){return workout.sets.reduce((total,set)=>total+Number(set.reps)*Number(set.weight),0)}
+    function renderTodaySummary(){const keys=["calories","protein","water","steps"];document.getElementById("todaySummary").innerHTML=keys.map(key=>{const tracker=trackers.find(item=>item.key===key);return '<button class="summary-metric" data-summary="'+key+'"><b>'+fmt(tracker?.value||0)+'</b><small>'+esc(tracker?.label||key)+'</small></button>'}).join("");document.querySelectorAll("[data-summary]").forEach(button=>button.onclick=()=>{showScreen("track");if(button.dataset.summary==="calories")showCalorieDetail();else openModal(button.dataset.summary,"history")})}
     function renderWorkouts(){
-      const todaysWorkouts=workouts.filter(workout=>isSameLocalDay(workout.performedAt));
+      const viewedDate=new Date(selectedTodayDate+"T12:00:00"),todaysWorkouts=workouts.filter(workout=>isSameLocalDay(workout.performedAt,viewedDate));
+      document.getElementById("sessionDateLabel").textContent=isSameLocalDay(viewedDate)?"TODAY'S SESSION":viewedDate.toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"}).toUpperCase();
       document.getElementById("exerciseCount").textContent=todaysWorkouts.length+" "+(todaysWorkouts.length===1?"EXERCISE":"EXERCISES");
-      document.getElementById("workoutList").innerHTML=todaysWorkouts.length?todaysWorkouts.map((workout,index)=>'<div class="swipe-row" data-swipe-row="'+workout.id+'"><div class="swipe-actions"><button class="swipe-edit" data-edit-workout="'+workout.id+'">✎<br>Edit</button><button class="swipe-delete" data-delete-workout="'+workout.id+'">×<br>Delete</button></div><article class="workout surface"><div class="workout-num">'+String(index+1).padStart(2,"0")+'</div><div class="workout-main"><span>'+esc(workout.muscle)+" · "+esc(workout.sub)+'</span><h3>'+esc(workout.exercise)+'</h3><div class="pills">'+(isTimedWorkout(workout.muscle)?'<b>'+(workout.minutes?fmt(workout.minutes)+' min':'Duration estimated')+'</b>':workout.sets.map(set=>"<b>"+set.reps+"×"+fmt(set.weight)+"kg</b>").join(""))+'</div></div><div class="workout-meta"><strong>'+fmt(isTimedWorkout(workout.muscle)?workoutBurn(workout):workoutVolume(workout))+'</strong><span>'+(isTimedWorkout(workout.muscle)?"KCAL":"KG VOL")+'</span><small class="workout-burn">🔥 '+fmt(workoutBurn(workout))+' kcal</small><small>'+workout.time+'</small><div class="workout-inline-actions"><button data-edit-workout="'+workout.id+'">Edit</button><button class="delete-workout" data-delete-workout="'+workout.id+'">Delete</button></div></div></article></div>').join(""):'<div class="empty-state">No exercises recorded today. Tap Add workout to begin.</div>';
+      document.getElementById("workoutList").innerHTML=todaysWorkouts.length?todaysWorkouts.map((workout,index)=>'<div class="swipe-row" data-swipe-row="'+workout.id+'"><div class="swipe-actions"><button class="swipe-edit" data-edit-workout="'+workout.id+'">✎<br>Edit</button><button class="swipe-delete" data-delete-workout="'+workout.id+'">×<br>Delete</button></div><article class="workout surface"><div class="workout-num">'+String(index+1).padStart(2,"0")+'</div><div class="workout-main"><span>'+esc(workout.muscle)+" · "+esc(workout.sub)+'</span><h3>'+esc(workout.exercise)+'</h3><div class="pills">'+(isTimedWorkout(workout.muscle)?'<b>'+(workout.minutes?fmt(workout.minutes)+' min':'Duration estimated')+'</b>':workout.sets.map(set=>"<b>"+set.reps+"×"+fmt(set.weight)+"kg</b>").join(""))+'</div></div><div class="workout-meta"><strong>'+fmt(isTimedWorkout(workout.muscle)?workoutBurn(workout):workoutVolume(workout))+'</strong><span>'+(isTimedWorkout(workout.muscle)?"KCAL":"KG VOL")+'</span><small class="workout-burn">🔥 '+fmt(workoutBurn(workout))+' kcal</small><small>'+workout.time+'</small></div><div class="workout-menu"><button class="more-workout" data-more-workout="'+workout.id+'" aria-label="Workout actions">⋯</button><div class="workout-popover hidden" data-workout-menu="'+workout.id+'"><button data-edit-workout="'+workout.id+'">Edit</button><button class="delete-workout" data-delete-workout="'+workout.id+'">Delete</button></div></div></article></div>').join(""):'<div class="empty-state">No exercises recorded for this date. Tap Start workout to begin.</div>';
       bindWorkoutActions();
       renderReports();
       renderHistory();
+      renderTodaySummary();
     }
     function bindWorkoutActions(){
       document.querySelectorAll("[data-edit-workout]").forEach(button=>button.onclick=event=>{event.stopPropagation();beginEditWorkout(button.dataset.editWorkout)});
       document.querySelectorAll("[data-delete-workout]").forEach(button=>button.onclick=event=>{event.stopPropagation();deleteWorkout(button.dataset.deleteWorkout)});
+      document.querySelectorAll("[data-more-workout]").forEach(button=>button.onclick=event=>{event.stopPropagation();const menu=document.querySelector('[data-workout-menu="'+button.dataset.moreWorkout+'"]');document.querySelectorAll("[data-workout-menu]").forEach(other=>{if(other!==menu)other.classList.add("hidden")});menu.classList.toggle("hidden")});
       document.querySelectorAll("[data-swipe-row]").forEach(row=>{
         const card=row.querySelector(".workout");let startX=0,startY=0;
         card.addEventListener("touchstart",event=>{startX=event.changedTouches[0].clientX;startY=event.changedTouches[0].clientY},{passive:true});
@@ -364,11 +383,11 @@
     }
     async function deleteWorkout(id){
       const workout=workouts.find(item=>item.id===id);if(!workout)return;
-      if(!confirm('Delete "'+workout.exercise+'"? This cannot be undone.'))return;
       const result=await db.from("workouts").delete().eq("id",id);
       if(result.error){alert("Workout could not be deleted: "+result.error.message);return}
       if(editingWorkoutId===id)resetComposer();
-      await loadUserData();showToast("Workout deleted");
+      pendingDeletedWorkout={...workout,sets:workout.sets.map(set=>({...set}))};
+      await loadUserData();showToast("Workout deleted","Undo",async()=>{const snapshot=pendingDeletedWorkout;if(!snapshot)return;try{await saveWorkoutToSupabase(snapshot,snapshot.sets);pendingDeletedWorkout=null;document.getElementById("toast").classList.add("hidden");await loadUserData();showToast("Workout restored")}catch(error){alert("Workout could not be restored: "+error.message)}});
     }
     function calorieRanges(period){
       const today=new Date();today.setHours(0,0,0,0);const ranges=[];
@@ -434,9 +453,10 @@
       return {buckets,labels};
     }
     function renderTrackerReports(){
-      const container=document.getElementById("metricReports");if(!container)return;
       document.querySelectorAll("[data-report-period]").forEach(button=>button.classList.toggle("active",button.dataset.reportPeriod===reportMetricPeriod));
-      container.innerHTML=trackers.map(tracker=>{const chart=reportMetricData(tracker,reportMetricPeriod),max=Math.max(...chart.buckets,1),latest=[...chart.buckets].reverse().find(value=>value>0)||0;return '<article class="metric-report surface '+tracker.color+'"><div class="metric-report-top"><span class="metric-icon">'+tracker.icon+'</span><div class="metric-report-title"><strong>'+tracker.label+'</strong><small>'+reportMetricPeriod[0].toUpperCase()+reportMetricPeriod.slice(1)+' trend · last 7 periods</small></div><div class="metric-report-value"><b>'+fmt(latest)+'</b><small>'+tracker.unit+'</small></div></div><div class="mini-bars" aria-label="'+tracker.label+' '+reportMetricPeriod+' chart">'+chart.buckets.map((value,index)=>'<span class="mini-bar" title="'+chart.labels[index]+': '+fmt(value)+' '+tracker.unit+'"><i style="height:'+Math.max(value?8:3,Math.round(value/max*100))+'%"></i></span>').join("")+'</div></article>'}).join("");
+      const cards=list=>list.map(tracker=>{const chart=reportMetricData(tracker,reportMetricPeriod),max=Math.max(...chart.buckets,1),latest=[...chart.buckets].reverse().find(value=>value>0)||0;return '<article class="metric-report surface '+tracker.color+'"><div class="metric-report-top"><span class="metric-icon">'+tracker.icon+'</span><div class="metric-report-title"><strong>'+tracker.label+'</strong><small>'+reportMetricPeriod[0].toUpperCase()+reportMetricPeriod.slice(1)+' trend · last 7 periods</small></div><div class="metric-report-value"><b>'+fmt(latest)+'</b><small>'+tracker.unit+'</small></div></div><div class="mini-bars" aria-label="'+tracker.label+' '+reportMetricPeriod+' chart">'+chart.buckets.map((value,index)=>'<span class="mini-bar" title="'+chart.labels[index]+': '+fmt(value)+' '+tracker.unit+'"><i style="height:'+Math.max(value?8:3,Math.round(value/max*100))+'%"></i></span>').join("")+'</div></article>'}).join("");
+      document.getElementById("nutritionMetricReports").innerHTML=cards(trackers.filter(tracker=>["calories","protein","water"].includes(tracker.key)));
+      document.getElementById("bodyMetricReports").innerHTML=cards(trackers.filter(tracker=>["weight","steps","sleep"].includes(tracker.key)));
     }
     document.querySelectorAll("[data-report-period]").forEach(button=>button.onclick=()=>{reportMetricPeriod=button.dataset.reportPeriod;renderTrackerReports()});
     function renderHistory(){
@@ -478,15 +498,15 @@
       const rows=workoutSets.map((set,index)=>({workout_id:workoutId,set_number:index+1,reps:Number(set.reps),weight_kg:Number(set.weight)}));
       if(rows.length){const setsResult=await db.from("workout_sets").insert(rows);if(setsResult.error){if(!id)await db.from("workouts").delete().eq("id",workoutId);throw setsResult.error}}
     }
-    async function ensureProfileWeight(){
-      if(profileWeightKg)return profileWeightKg;
-      const entered=prompt("Enter your current weight in kg.");
+    async function ensureProfileWeight(force=false){
+      if(profileWeightKg&&!force)return profileWeightKg;
+      const entered=prompt("Enter your current weight in kg.",profileWeightKg||"");
       if(entered===null)return null;
       const weight=Number(entered);
       if(!Number.isFinite(weight)||weight<25||weight>400){alert("Enter a valid weight between 25 and 400 kg.");return null}
       const result=await db.from("fitness_profiles").upsert({user_id:currentUser.id,weight_kg:weight,updated_at:new Date().toISOString()},{onConflict:"user_id"});
       if(result.error){alert("Run the included workout-calories migration first: "+result.error.message);return null}
-      profileWeightKg=weight;updateBurnPreview();return weight;
+      profileWeightKg=weight;updateBurnPreview();renderProfile();return weight;
     }
     document.getElementById("saveWorkout").onclick=async()=>{
       if(!selectedMuscle||!selectedSub||!currentUser)return;
@@ -533,14 +553,25 @@
     function openNutritionModal(key,id=null){activeTracker=key;editingNutritionId=id;modalMode="manual";document.getElementById("modalBackdrop").classList.remove("hidden");renderModal()}
     function renderTrackers(){
       renderNutritionCards();
-      document.getElementById("trackerList").innerHTML=trackers.filter(tracker=>!isNutritionKey(tracker.key)).map(tracker=>{const percent=Math.min(100,Math.round(tracker.target?tracker.value/tracker.target*100:0));return '<article class="tracker surface '+tracker.color+'"><div class="tracker-main"><span class="metric-icon">'+tracker.icon+'</span><div><p>'+tracker.label+'</p><div class="metric-value"><strong>'+fmt(tracker.value)+'</strong><span>'+tracker.unit+'</span></div></div><button class="quick" data-quick="'+tracker.key+'">＋ <small>+'+fmt(tracker.step)+'</small></button></div><div class="progress"><i style="width:'+percent+'%"></i></div><div class="tracker-status"><small>'+percent+"% of "+fmt(tracker.target)+" "+tracker.unit+"</small><time>"+(tracker.history[0]?.at||"No entries")+'</time></div><div class="tracker-actions"><button data-manual="'+tracker.key+'">⌨ Manual</button><button data-history="'+tracker.key+'">↶ History</button><button data-undo="'+tracker.key+'">↩ Undo</button><button data-settings="'+tracker.key+'">✎ Edit</button></div></article>'}).join("");
+      document.getElementById("trackerList").innerHTML=trackers.map(tracker=>{const percent=Math.min(100,Math.round(tracker.target?tracker.value/tracker.target*100:0));return '<article class="tracker surface '+tracker.color+'"><div class="tracker-main"><span class="metric-icon">'+tracker.icon+'</span><div><p>'+tracker.label+'</p><div class="metric-value"><strong>'+fmt(tracker.value)+'</strong><span>'+tracker.unit+'</span></div></div><button class="quick" data-quick="'+tracker.key+'">＋ <small>+'+fmt(tracker.step)+'</small></button></div><div class="progress"><i style="width:'+percent+'%"></i></div><div class="tracker-status"><small>'+percent+"% of "+fmt(tracker.target)+" "+tracker.unit+"</small><time>"+(tracker.history[0]?.at||"No entries")+'</time></div><div class="tracker-actions"><button class="tracker-open" data-open-detail="'+tracker.key+'">Open details ›</button><button data-manual="'+tracker.key+'">⌨ Manual</button><button data-history="'+tracker.key+'">↶ History</button><button data-undo="'+tracker.key+'">↩ Undo</button><button data-settings="'+tracker.key+'">✎ Edit</button></div></article>'}).join("");
       document.querySelectorAll("[data-quick]").forEach(button=>button.onclick=async()=>{button.disabled=true;try{await addTrackerEntry(button.dataset.quick,trackers.find(item=>item.key===button.dataset.quick).step,"quick_increment")}catch(error){alert(error.message)}finally{button.disabled=false}});
       document.querySelectorAll("[data-undo]").forEach(button=>button.onclick=()=>undoTracker(button.dataset.undo));
       document.querySelectorAll("[data-history]").forEach(button=>button.onclick=()=>openModal(button.dataset.history,"history"));
       document.querySelectorAll("[data-manual]").forEach(button=>button.onclick=()=>openModal(button.dataset.manual,"manual"));
       document.querySelectorAll("[data-settings]").forEach(button=>button.onclick=()=>openModal(button.dataset.settings,"settings"));
-      renderScore();renderTrackerReports();renderCalories();
+      document.querySelectorAll("[data-open-detail]").forEach(button=>button.onclick=()=>button.dataset.openDetail==="calories"?showCalorieDetail():openModal(button.dataset.openDetail,"history"));
+      renderScore();renderTrackerReports();renderCalories();renderTodaySummary();renderProfile();
     }
+    function showTrackOverview(){document.getElementById("trackOverview").classList.remove("hidden");document.getElementById("calorieDetail").classList.add("hidden")}
+    function showCalorieDetail(){showScreen("track");document.getElementById("trackOverview").classList.add("hidden");document.getElementById("calorieDetail").classList.remove("hidden");renderCalories();window.scrollTo({top:0,behavior:"smooth"})}
+    document.getElementById("backToTrack").onclick=showTrackOverview;
+    document.getElementById("openCaloriesProgress").onclick=showCalorieDetail;
+    function setProgressTab(tab){document.querySelectorAll("[data-progress-tab]").forEach(button=>button.classList.toggle("active",button.dataset.progressTab===tab));["workouts","nutrition","body"].forEach(name=>document.getElementById("progress"+name[0].toUpperCase()+name.slice(1)).classList.toggle("hidden",name!==tab));}
+    document.querySelectorAll("[data-progress-tab]").forEach(button=>button.onclick=()=>setProgressTab(button.dataset.progressTab));
+    function renderProfile(){if(!document.getElementById("profileTargets"))return;document.getElementById("profileEmail").textContent=currentUser?.email||"Signed in";document.getElementById("profileWeightValue").textContent=profileWeightKg?fmt(profileWeightKg)+" kg":"Not set";document.getElementById("profileTargets").innerHTML=trackers.map(tracker=>'<button class="target-row" data-target-edit="'+tracker.key+'"><span><i class="metric-icon">'+tracker.icon+'</i><b>'+tracker.label+'</b></span><small>'+fmt(tracker.target)+' '+tracker.unit+' ›</small></button>').join("");document.querySelectorAll("[data-target-edit]").forEach(button=>button.onclick=()=>openModal(button.dataset.targetEdit,"settings"))}
+    document.getElementById("profileWeight").onclick=async()=>{const weight=await ensureProfileWeight(true);if(weight)showToast("✓ Weight updated")};
+    const logBackdrop=document.getElementById("logBackdrop");document.getElementById("universalLog").onclick=()=>logBackdrop.classList.remove("hidden");document.getElementById("closeLog").onclick=()=>logBackdrop.classList.add("hidden");logBackdrop.onclick=event=>{if(event.target===logBackdrop)logBackdrop.classList.add("hidden")};
+    document.querySelectorAll("[data-log]").forEach(button=>button.onclick=()=>{const type=button.dataset.log;logBackdrop.classList.add("hidden");if(type==="strength")openComposerFor();else if(["warmup","cardio","hiit"].includes(type))openComposerFor(type==="warmup"?"Warmup":type==="cardio"?"Cardio":"HIIT");else if(type==="meal")openNutritionModal("calories");else if(type==="protein")openNutritionModal("protein");else openModal(type,"manual")});
     async function addTrackerEntry(key,value,source){
       if(!currentUser)throw new Error("Please sign in again.");
       const result=await db.from("tracker_entries").insert({user_id:currentUser.id,metric:key,value:Number(value),entry_source:source}).select().single();
@@ -682,7 +713,8 @@
       currentUser=session.user;authScreen.classList.add("hidden");appShell.classList.remove("hidden");
       if(loadedUserId!==currentUser.id){loadedUserId=currentUser.id;await loadUserData()}
     }
-    document.getElementById("logoutButton").onclick=async()=>{const result=await db.auth.signOut();if(result.error)alert(result.error.message)};
+    async function signOut(){const result=await db.auth.signOut();if(result.error)alert(result.error.message)}
+    document.getElementById("logoutButton").onclick=signOut;document.getElementById("profileLogout").onclick=signOut;
     db.auth.onAuthStateChange((event,session)=>setTimeout(()=>handleSession(session),0));
     async function initialize(){renderMuscles();renderSets();renderWorkouts();renderTrackers();const result=await db.auth.getSession();if(result.error)showAuthMessage(result.error.message);else await handleSession(result.data.session)}
     initialize();
