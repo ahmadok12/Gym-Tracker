@@ -214,7 +214,7 @@
     let currentUser=null,loadedUserId=null,authMode="signin";
     let selectedMuscle="",selectedSub="",sets=[{reps:10,weight:20}],previousSets=[],editingWorkoutId=null;
     let activeTracker=null,modalMode="history",chartPeriod="daily",reportMetricPeriod="daily",caloriePeriod="daily",editingNutritionId=null;
-    let workouts=[],nutritionEntries=[],nutritionReady=true,profileWeightKg=null,workoutEnhancementsReady=true,selectedTodayDate=localDateValue(),pendingDeletedWorkout=null,toastTimer=null;
+    let workouts=[],nutritionEntries=[],nutritionReady=true,profileWeightKg=null,workoutEnhancementsReady=true,selectedTodayDate="",pendingDeletedWorkout=null,toastTimer=null;
     let trackers=freshTrackers();
 
     const esc=value=>String(value??"").replace(/[&<>"]/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[char]));
@@ -222,6 +222,7 @@
     const nowLabel=()=>new Date().toLocaleDateString(undefined,{month:"short",day:"numeric"})+" · "+new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"});
     const isSameLocalDay=(a,b=new Date())=>{const d=new Date(a);return d.getFullYear()===b.getFullYear()&&d.getMonth()===b.getMonth()&&d.getDate()===b.getDate()};
     const localDateValue=value=>{const date=value?new Date(value):new Date();return [date.getFullYear(),String(date.getMonth()+1).padStart(2,"0"),String(date.getDate()).padStart(2,"0")].join("-")};
+    selectedTodayDate=localDateValue();
     const performedAtForDate=(dateValue,existingValue=null)=>{const [year,month,day]=dateValue.split("-").map(Number),time=existingValue?new Date(existingValue):new Date();return new Date(year,month-1,day,time.getHours(),time.getMinutes(),time.getSeconds(),time.getMilliseconds()).toISOString()};
     const entrySource=value=>value==="quick_increment"?"Quick increment":value==="manual"?"Manual entry":String(value||"Entry").replaceAll("_"," ");
     const isTimedWorkout=muscle=>muscle==="Warmup"||muscle==="Cardio"||muscle==="HIIT";
